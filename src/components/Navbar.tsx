@@ -42,10 +42,11 @@ export function DropMenu() {
                 <DropdownMenuContent className="w-30 bg-black/10 backdrop-blur-md" align="start">
                     <DropdownMenuLabel>Overview</DropdownMenuLabel>
                     <DropdownMenuGroup>
-                        <DropdownMenuItem>
-                            <Link href={'#about'}>About</Link>
-                            {/* <DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut> */}
-                        </DropdownMenuItem>
+                        <Link href={'#about'}>
+                            <DropdownMenuItem>
+                                About
+                            </DropdownMenuItem>
+                        </Link>
                         <DropdownMenuItem>
                             Skills
                             {/* <DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut> */}
