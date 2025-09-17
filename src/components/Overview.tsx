@@ -24,15 +24,6 @@ export default function Overview() {
                             <div className="flex max-sm:flex-wrap max-sm:justify-center">
                                 <div className="p-2 justify-items-center">
                                     <Image
-                                        src="/assets/laravel.webp"
-                                        alt="logo"
-                                        width={40}
-                                        height={40}
-                                    />
-                                    <h4>Laravel</h4>
-                                </div>
-                                <div className="p-2 justify-items-center">
-                                    <Image
                                         src="/assets/react.webp"
                                         alt="logo"
                                         width={40}
@@ -51,7 +42,17 @@ export default function Overview() {
                                     />
                                     <h4>Next.js</h4>
                                 </div>
-                                <div className="p-2 justify-items-center mt-3">
+                                <div className="p-2 justify-items-center">
+                                    <Image
+                                        src="/assets/laravel.webp"
+                                        alt="logo"
+                                        width={40}
+                                        height={40}
+                                    />
+                                    <h4>Laravel</h4>
+                                </div>
+                                
+                                <div className="p-2 justify-items-center mt-3 max-sm:mt-0">
                                     <Image
                                         src="/assets/sql.webp"
                                         alt="logo"
