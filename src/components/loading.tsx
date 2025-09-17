@@ -2,7 +2,6 @@ export default function Loading() {
     return (
         <>
             <div className="flex items-center justify-center h-50">
-                {/* <h1 className="text-xl font-bold">Loading...</h1> */}
                 <div className="h-10 w-10 border-l-2 border-current rounded-full animate-spin"></div>
             </div>
             {/* <div className="mx-auto w-full max-w-sm rounded-md border border-blue-300 p-4 animate-bounce">

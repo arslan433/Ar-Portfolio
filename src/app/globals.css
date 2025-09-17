@@ -22,8 +22,11 @@ body {
   color: var(--foreground);
   font-family: "Geist Mono";
   /* font-family: "Poppins"; */
+  @apply scroll-smooth;
 }
-
+html {
+  @apply scroll-smooth;
+}
 :root {
   --background: white;
   --foreground: black;
@@ -48,4 +51,7 @@ body {
 }
 .light #imginvert{
     filter: invert(1) brightness(0);
+}
+html {
+  scroll-behavior: smooth;
 }

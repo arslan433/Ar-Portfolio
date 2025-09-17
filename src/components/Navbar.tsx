@@ -5,6 +5,7 @@ export default function Navbar() {
     return (
         <div className="items-center justify-center max-sm:hidden relative bottom-1">
             <Link href={'/'} id="link" className="mx-3 font-semibold p-2 dark:hover:bg-white/10 rounded-md transition-colors ">Overview</Link>
+            <Link id="link" href={'#about'} className="mx-3 font-semibold p-2 dark:hover:bg-white/10 rounded-md transition-colors">About</Link>
             <Link id="link" href={'#projects'} className="mx-3 font-semibold p-2 dark:hover:bg-white/10 rounded-md transition-colors">Projects</Link>
             <Link id="link" href={'#experience'} className="mx-3 font-semibold p-2 dark:hover:bg-white/10 rounded-md transition-colors ">Experience</Link>
             <Link id="link" href={'#contact'} className="mx-3 font-semibold p-2  dark:hover:bg-white/10 rounded-md transition-colors">Contact</Link>
@@ -41,6 +42,10 @@ export function DropMenu() {
                 <DropdownMenuContent className="w-30 bg-black/10 backdrop-blur-md" align="start">
                     <DropdownMenuLabel>Overview</DropdownMenuLabel>
                     <DropdownMenuGroup>
+                        <DropdownMenuItem>
+                            <Link href={'#about'}>About</Link>
+                            {/* <DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut> */}
+                        </DropdownMenuItem>
                         <DropdownMenuItem>
                             Skills
                             {/* <DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut> */}

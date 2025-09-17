@@ -15,6 +15,7 @@ export default function Header() {
                 <Navbar />
                 <DropMenu />
             </div>
+           
         </>
     )
 }
