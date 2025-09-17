@@ -9,7 +9,7 @@ export default function Overview() {
                 <div className="bg-fiber-carbon flex h-screen flex-col items-  mt-20">
                     <div className="max-w-sm rounded-md bg-whte/10 p-5 backdrop-blur-md text-center items-center" id="">
                         <div className="justify-items-center">
-                            <h1 className="text-3xl font-bold p-4 max-sm:w-[350]"> Hi, I am <i>Arslan.M</i> </h1>
+                            <h1 className="text-3xl font-bold pb-4 max-sm:w-[350]"> Hi, I am <i>Arslan.M</i> </h1>
                             <Image
                                 src="/assets/profile.png"
                                 alt="profile"
