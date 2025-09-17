@@ -52,7 +52,15 @@ export default function Overview() {
                                     />
                                     <h4>Laravel</h4>
                                 </div>
-
+                                <div className="p-2 justify-items-center">
+                                    <Image
+                                        src="/assets/firebase.webp"
+                                        alt="logo"
+                                        width={40}
+                                        height={40}
+                                    />
+                                    <h4>Firebase</h4>
+                                </div>
                                 <div className="p-2 justify-items-center mt-3 max-sm:mt-0">
                                     <Image
                                         src="/assets/sql.webp"
@@ -70,7 +78,6 @@ export default function Overview() {
                                         alt="logo"
                                         width={40}
                                         height={40}
-
                                     />
                                     <h4>Tailwind</h4>
                                 </div>
