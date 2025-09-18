@@ -29,7 +29,6 @@ export default function Overview() {
                                     alt="profile"
                                     width={200}
                                     height={200}
-
                                 />
                             </motion.div>
                             <h2 className="text-2xl font-bold mt-2 p-4">The Full Stack Developer</h2>
@@ -122,12 +121,17 @@ export default function Overview() {
                 </div>
             </div>
             <section id="about" className="justify-content-center justify-items-center">
-                <div className="w-3/5 max-sm:w-[95%] max-sm:px-2">
+                <motion.div className="w-3/5 max-sm:w-[95%] max-sm:px-2"
+                     initial={{ opacity: 0, y: 100 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: .8 }}
+                viewport={{ once: true }}
+                >
                     <h2 className="text-3xl font-bold text-center mb-3 pt-15">About me</h2>
                     <div className="">
                         <p className="text-left">I am a passionate full stack developer who loves building web applications that are simple, fast, and user-friendly. I enjoy learning something new every day and improving my skills to create better solutions. Working with a team excites me because I believe in growth through communication, trust, and teamwork. I also believe that every problem has a solution, and with focus and consistency, success can always be achieved.</p>
                     </div>
-                </div>
+                </motion.div>
             </section>
         </>
     )
