@@ -16,7 +16,7 @@ export default function Projects() {
                 </div>
                 {/* Projects listing  */}
                 <div className="justify-items-center px-2 mt-15 items-center">
-                    <div className="border-1 h-full w-3/5 max-sm:w-full mb-2 pb-3 px-4" >
+                    <div className="border-1 rounded-xs h-full w-3/5 max-sm:w-full mb-2 pb-3 px-4" >
                         <div className="py-4 text-left">
                             <h4 className="font-semibold text-xl">Project Name Heading</h4>
                         </div>
@@ -24,7 +24,7 @@ export default function Projects() {
                             <p className="text-left mb-2 leading-[normal]">These are most of the projects I've done since I started programming, some of them are personstarted programming, some of them are personstarted programming, some of them are personal projects, freelance, work,</p>
                         </div>
                         <div className="flex justify-between items-center max-sm:items-start flex-wrap max-sm:flex-col flex-row mt-2">
-                            <div className="bg-white/15 px-2 py-1 max-sm:mb-4 rounded-xs">
+                            <div className="bg-white/15 px-2 py-1 max-sm:mb-4 rounded-xs" id="bgchange">
                                 <p className="font-[700] tracking-tighter uppercase text-xs font-sans">
                                     Javascript - React - Tailwind
                                 </p>

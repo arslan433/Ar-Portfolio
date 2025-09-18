@@ -24,9 +24,11 @@ body {
   /* font-family: "Poppins"; */
   @apply scroll-smooth;
 }
+
 html {
   @apply scroll-smooth;
 }
+
 :root {
   --background: white;
   --foreground: black;
@@ -49,9 +51,15 @@ html {
 .light #separator {
   color: rgba(0, 0, 0, 0.1);
 }
-.light #imginvert{
-    filter: invert(1) brightness(0);
+
+.light #imginvert {
+  filter: invert(1) brightness(0);
 }
+
+.light #bgchange {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
 html {
   scroll-behavior: smooth;
 }
