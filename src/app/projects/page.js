@@ -21,13 +21,12 @@ export default function Projects() {
                             <h4 className="font-semibold text-xl">Project Name Heading</h4>
                         </div>
                         <div>
-                            <p className="text-left mb-2">These are most of the projects I've done since I started programming, some of them are personstarted programming, some of them are personstarted programming, some of them are personal projects, freelance, work,</p>
-
+                            <p className="text-left mb-2 leading-[normal]">These are most of the projects I've done since I started programming, some of them are personstarted programming, some of them are personstarted programming, some of them are personal projects, freelance, work,</p>
                         </div>
-                        <div className="flex justify-between items-center flex-wrap max-md:flex-column flex-row mt-2">
-                            <div className="">
-                                <p className="font-[700] tracking-tighter uppercase text-sm">
-                                    Javascript-React-Tailwind
+                        <div className="flex justify-between items-center max-sm:items-start flex-wrap max-sm:flex-col flex-row mt-2">
+                            <div className="bg-white/15 px-2 py-1 max-sm:mb-4 rounded-xs">
+                                <p className="font-[700] tracking-tighter uppercase text-xs font-sans">
+                                    Javascript - React - Tailwind
                                 </p>
                             </div>
                             <div className="flex justify-center items-end gap-5">
@@ -37,6 +36,7 @@ export default function Projects() {
                                         alt="logo"
                                         width={30}
                                         height={30}
+                                        id="imginvert" class="invert brightness-0"
                                     />
                                 </p>
                                 <p><Eye height={30} width={30} /></p>
