@@ -122,10 +122,10 @@ export default function Overview() {
             </div>
             <section id="about" className="justify-content-center justify-items-center">
                 <motion.div className="w-3/5 max-sm:w-[95%] max-sm:px-2"
-                     initial={{ opacity: 0, y: 100 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: .8 }}
-                viewport={{ once: true }}
+                    initial={{ opacity: 0, y: 100 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: .8 }}
+                    viewport={{ once: true }}
                 >
                     <h2 className="text-3xl font-bold text-center mb-3 pt-15">About me</h2>
                     <div className="">
