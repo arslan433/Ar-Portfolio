@@ -5,8 +5,8 @@ export default function Navbar() {
     return (
         <div className="items-center justify-center max-sm:hidden relative bottom-1">
             <Link href={'/'} id="link" className="mx-3 font-semibold p-2 dark:hover:bg-white/10 rounded-md transition-colors ">Overview</Link>
-            <Link id="link" href={'#about'} className="mx-3 font-semibold p-2 dark:hover:bg-white/10 rounded-md transition-colors">About</Link>
-            <Link id="link" href={'#projects'} className="mx-3 font-semibold p-2 dark:hover:bg-white/10 rounded-md transition-colors">Projects</Link>
+            <Link id="link" href={'/#about'} className="mx-3 font-semibold p-2 dark:hover:bg-white/10 rounded-md transition-colors">About</Link>
+            <Link id="link" href={'/projects'} className="mx-3 font-semibold p-2 dark:hover:bg-white/10 rounded-md transition-colors">Projects</Link>
             <Link id="link" href={'#experience'} className="mx-3 font-semibold p-2 dark:hover:bg-white/10 rounded-md transition-colors ">Experience</Link>
             <Link id="link" href={'#contact'} className="mx-3 font-semibold p-2  dark:hover:bg-white/10 rounded-md transition-colors">Contact</Link>
             <span id="separator" className="border-l-green text-white/10">|</span>
@@ -40,9 +40,11 @@ export function DropMenu() {
                     <Button variant="outline"><Menu /></Button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent className="w-30 bg-black/10 backdrop-blur-md" align="start">
-                    <DropdownMenuLabel>Overview</DropdownMenuLabel>
+                    <Link href={'/#overview'}>
+                        <DropdownMenuItem>Overview</DropdownMenuItem>
+                    </Link>
                     <DropdownMenuGroup>
-                        <Link href={'#about'}>
+                        <Link href={'/#about'}>
                             <DropdownMenuItem>
                                 About
                             </DropdownMenuItem>
@@ -51,10 +53,11 @@ export function DropMenu() {
                             Skills
                             {/* <DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut> */}
                         </DropdownMenuItem>
+                        <Link href={'/projects'}>
                         <DropdownMenuItem>
                             Projects
-                            {/* <DropdownMenuShortcut>⌘B</DropdownMenuShortcut> */}
                         </DropdownMenuItem>
+                        </Link>
                         <DropdownMenuItem>
                             Contact
                             {/* <DropdownMenuShortcut>⌘S</DropdownMenuShortcut> */}
@@ -69,7 +72,10 @@ export function DropMenu() {
                         <DropdownMenuShortcut><ExternalLink width={15} height={15} /></DropdownMenuShortcut>
                     </DropdownMenuItem>
                     {/* <DropdownMenuSeparator /> */}
+                    <div className="pb-2">
                     <ThemeToggle />
+
+                    </div>
                 </DropdownMenuContent>
             </DropdownMenu>
         </div>
