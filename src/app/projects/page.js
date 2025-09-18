@@ -21,7 +21,7 @@ export default function Projects() {
                     <motion.div
                         initial={{ opacity: 0, y: 100 }}
                         whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8 }}
+                        transition={{ duration: 0.6 }}
                         viewport={{ once: true }}
                         className="border-1 rounded-xs h-full w-3/5 max-sm:w-full mb-10 pb-3 px-4" >
                         <div className="py-4 text-left">
@@ -53,7 +53,7 @@ export default function Projects() {
                     <motion.div
                         initial={{ opacity: 0, y: 100 }}
                         whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8 }}
+                        transition={{ duration: 0.6 }}
                         viewport={{ once: true }}
                         className="border-1 rounded-xs h-full w-3/5 max-sm:w-full mb-10 pb-3 px-4" >
                         <div className="py-4 text-left">
@@ -85,7 +85,7 @@ export default function Projects() {
                     <motion.div
                         initial={{ opacity: 0, y: 100 }}
                         whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8 }}
+                        transition={{ duration: 0.6 }}
                         viewport={{ once: true }}
                         className="border-1 rounded-xs h-full w-3/5 max-sm:w-full mb-10 pb-3 px-4" >
                         <div className="py-4 text-left">
