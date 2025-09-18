@@ -1,4 +1,7 @@
+"use client";
+
 import Image from "next/image";
+import { motion } from "framer-motion";
 import Header from "./Header";
 import { DropdownMenuSeparator } from "./ui/dropdown-menu";
 export default function Overview() {
@@ -10,12 +13,25 @@ export default function Overview() {
                     <div className="max-w-sm rounded-md bg-whte/10 p-5 backdirop-blur-md text-center items-center" id="">
                         <div className="justify-items-center">
                             <h1 id="overview" className="text-3xl font-bold pb-4 max-sm:w-[307px]"> Hi, I am <i>Arslan.M</i> </h1>
-                            <Image
-                                src="/assets/profile.png"
-                                alt="profile"
-                                width={200}
-                                height={200}
-                            />
+                            <motion.div
+                                animate={{
+                                    y: [.5, .5, .5],
+                                    scale: [1, 1.03, 1],
+                                }}
+                                transition={{
+                                    duration: 1,
+                                    repeat: Infinity,
+                                    ease: "easeInOut",
+                                }}
+                            >
+                                <Image
+                                    src="/assets/profile.png"
+                                    alt="profile"
+                                    width={200}
+                                    height={200}
+
+                                />
+                            </motion.div>
                             <h2 className="text-2xl font-bold mt-2 p-4">The Full Stack Developer</h2>
                         </div>
                         <DropdownMenuSeparator />
