@@ -24,13 +24,13 @@ export default function Projects() {
                             <p className="text-left mb-2">These are most of the projects I've done since I started programming, some of them are personstarted programming, some of them are personstarted programming, some of them are personal projects, freelance, work,</p>
 
                         </div>
-                        <div className="flex justify-between items-start flex-wrap max-md:flex-column flex-row gap-5 mt-2">
+                        <div className="flex justify-between items-center flex-wrap max-md:flex-column flex-row mt-2">
                             <div className="">
                                 <p className="font-[700] tracking-tighter uppercase text-sm">
                                     Javascript-React-Tailwind
                                 </p>
                             </div>
-                            <div className="flex justify-center items-end gap-3">
+                            <div className="flex justify-center items-end gap-5">
                                 <p>
                                     <Image
                                         src="/assets/github.webp"
