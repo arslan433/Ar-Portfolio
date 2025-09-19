@@ -39,7 +39,7 @@ export function DropMenu() {
                 <DropdownMenuTrigger asChild>
                     <Button variant="outline"><Menu /></Button>
                 </DropdownMenuTrigger>
-                <DropdownMenuContent className="w-30 bg-black/10 backdrop-blur-md" align="start">
+                <DropdownMenuContent className="w-30 bg-black/10 backdrop-blur-md mr-3" align="start">
                     <Link href={'/#overview'}>
                         <DropdownMenuItem>Overview</DropdownMenuItem>
                     </Link>
@@ -54,9 +54,9 @@ export function DropMenu() {
                             {/* <DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut> */}
                         </DropdownMenuItem>
                         <Link href={'/projects'}>
-                        <DropdownMenuItem>
-                            Projects
-                        </DropdownMenuItem>
+                            <DropdownMenuItem>
+                                Projects
+                            </DropdownMenuItem>
                         </Link>
                         <DropdownMenuItem>
                             Contact
@@ -73,7 +73,7 @@ export function DropMenu() {
                     </DropdownMenuItem>
                     {/* <DropdownMenuSeparator /> */}
                     <div className="pb-2">
-                    <ThemeToggle />
+                        <ThemeToggle />
 
                     </div>
                 </DropdownMenuContent>
