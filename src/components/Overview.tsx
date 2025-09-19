@@ -39,12 +39,21 @@ export default function Overview() {
                             <h3 className="text-xl font-semibold pb-3">Expertise in</h3>
                             <div className="flex max-sm:flex-wrap max-sm:justify-center">
                                 <div className="p-2 justify-items-center">
-                                    <Image
-                                        src="/assets/react.webp"
-                                        alt="logo"
-                                        width={40}
-                                        height={40}
-                                    />
+                                    <motion.div animate={{ rotate: 360 }}
+                                        transition={{
+                                            repeat: Infinity,
+                                            repeatType: "loop",
+                                            duration: 5,
+                                            ease: "linear",
+                                        }}>
+
+                                        <Image
+                                            src="/assets/react.webp"
+                                            alt="logo"
+                                            width={40}
+                                            height={40}
+                                        />
+                                    </motion.div>
                                     <h4>React</h4>
                                 </div>
                                 <div className="p-2 justify-items-center">

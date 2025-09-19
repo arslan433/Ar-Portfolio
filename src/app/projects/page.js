@@ -4,12 +4,10 @@ import Header from "../../components/Header";
 import { Eye } from 'lucide-react';
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { useState } from "react";
 
 
 export default function Projects() {
-    // const [active, setActive] = useState(0);
-    // const tabs = ["Home", "Projects", "About", "Contact"];
+    
     return (
         <>
             <Header />
@@ -120,23 +118,7 @@ export default function Projects() {
                     </motion.div>
                 </div>
             </div>
-            {/* <div className="flex gap-6 relative">
-                {tabs.map((tab, i) => (
-                    <button
-                        key={i}
-                        onClick={() => setActive(i)}
-                        className="relative px-2 py-1 text-white"
-                    >
-                        {tab}
-                        {active === i && (
-                            <motion.div
-                                layoutId="underline" // shared layout animation
-                                className="absolute left-0 right-0 bottom-1 h-[2px] bg-blue-500"
-                            />
-                        )}
-                    </button>
-                ))}
-            </div> */}
+         
         </>
     )
 }
