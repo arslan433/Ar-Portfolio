@@ -16,7 +16,7 @@ export default function Projects() {
                 <h3 className="text-3xl font-bold mb-3">Projects</h3>
                 <div className="justify-items-center">
                     <p className="w-3/5 text-left max-sm:w-full px-2">
-                        These are most of the projects I've done since I started programming, some of them are personal projects, freelance, work, practice or for other situation. If you want to see absolutely all my projects go to my <Link href={'https://github.com/arslan433/'} target="_blank" className="hover:underline">Github</Link>.
+                        These are most of the projects I've done since I started programming, some of them are personal projects, freelance, work, practice or for other situation. If you want to see absolutely all my projects go to my <Link href={'https://github.com/arslan433/'} target="_blank" className="hover:underline">github.com/arslan433</Link>.
                     </p>
                 </div>
                 {/* Projects listing  */}
@@ -49,7 +49,7 @@ export default function Projects() {
                                         id="imginvert" class="invert brightness-0"
                                     />
                                 </Link>
-                                <Link href={'https://arslan-practises.vercel.app/'} target="_blank"><Eye height={30} width={30} /></Link>
+                                <Link href={'https://arslan-dev.vercel.app/'} target="_blank"><Eye height={30} width={30} /></Link>
                             </div>
                         </div>
                     </motion.div>
@@ -85,7 +85,6 @@ export default function Projects() {
                             </div>
                         </div>
                     </motion.div>
-
                 </div>
             </div>
 
