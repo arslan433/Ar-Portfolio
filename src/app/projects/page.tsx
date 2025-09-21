@@ -59,7 +59,7 @@ export default function Projects() {
     {
       title: "N Y Times",
       description:
-        "I integrate the New York Times APIs to display books, top stories, and articles with category-wise navigation. Built with Next.js and Tailwind, featuring modals, skeleton loaders, and smooth animations.",
+        "A dynamic web app that integrates New York Times APIs to explore books, top stories, and articles with smooth navigation and interactions.",
       stack: "Next.js - Tailwind - NYT Api",
       github: "https://github.com/arslan433/NYTimes.git",
       demo: "https://nytimes-news.vercel.app/",
