@@ -57,10 +57,26 @@ function ProjectCard({ title, description, stack, github, demo }: any) {
 export default function Projects() {
   const projects = [
     {
+      title: "Next Mart (working)",
+      description:
+        "Next Mart is a modern e-commerce platform that delivers a fast, responsive, and seamless online shopping experience with a focus on style, performance, and user convenience.",
+      stack: "Next.js - Laravel - Tailwind",
+      github: "https://github.com/arslan433/Next-Mart.git",
+      demo: "https://arnextmart.vercel.app/",
+    },
+    {
+      title: "Pixel Forge",
+      description:
+        "Pixel Forge is an AI tool that turns your text ideas into clear, creative images through a simple and modern interface.",
+      stack: "Next.js - Tailwind - Rapid API",
+      github: "https://github.com/arslan433/ArPixelForge.git",
+      demo: "https://arpixelforge.vercel.app/",
+    },
+    {
       title: "N Y Times",
       description:
         "A dynamic web app that integrates New York Times APIs to explore books, top stories, and articles with smooth navigation and interactions.",
-      stack: "Next.js - Tailwind - NYT Api",
+      stack: "Next.js - Tailwind - NYT API",
       github: "https://github.com/arslan433/NYTimes.git",
       demo: "https://nytimes-news.vercel.app/",
     },
