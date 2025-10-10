@@ -3,7 +3,7 @@ import Link from "next/link";
 import ThemeToggle from "./ThemeToggle";
 export default function Navbar() {
     return (
-        <div className="items-center justify-center max-sm:hidden relative bottom-1">
+        <div className="items-center justify-center max-md:hidden relative bottom-1">
             <Link href={'/'} id="link" className="mx-3 font-semibold p-2 dark:hover:bg-white/10 rounded-md transition-colors ">Overview</Link>
             <Link id="link" href={'/#about'} className="mx-3 font-semibold p-2 dark:hover:bg-white/10 rounded-md transition-colors">About</Link>
             <Link id="link" href={'/projects'} className="mx-3 font-semibold p-2 dark:hover:bg-white/10 rounded-md transition-colors">Projects</Link>
@@ -33,7 +33,7 @@ import {
 
 export function DropMenu() {
     return (
-        <div className="min-sm:hidden bg-black/10 rounded-md">
+        <div className="min-md:hidden bg-black/10 rounded-md">
 
             <DropdownMenu>
                 <DropdownMenuTrigger asChild>

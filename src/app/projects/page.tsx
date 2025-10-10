@@ -60,20 +60,28 @@ export default function Projects() {
       title: "Next Mart (working)",
       description:
         "Next Mart is a modern e-commerce platform that delivers a fast, responsive, and seamless online shopping experience with a focus on style, performance, and user convenience.",
-      stack: "Next.js - Laravel - Tailwind",
+      stack: "Next.js - Laravel - SQL",
       github: "https://github.com/arslan433/Next-Mart.git",
       demo: "https://arnextmart.vercel.app/",
+    },
+    {
+      title: "Traffic Checker",
+      description:
+        "A website traffic checker shows how many visitors a site gets, where they come from, and how they engage.",
+      stack: "Next.js - HighCharts - Similarweb API",
+      github: "https://github.com/arslan433/Traffic-Checker.git",
+      demo: "https://artrafficchecker.vercel.app/",
     },
     {
       title: "Pixel Forge",
       description:
         "Pixel Forge is an AI tool that turns your text ideas into clear, creative images through a simple and modern interface.",
-      stack: "Next.js - Tailwind - Rapid API",
+      stack: "Next.js - AI - Rapid API",
       github: "https://github.com/arslan433/ArPixelForge.git",
       demo: "https://arpixelforge.vercel.app/",
     },
     {
-      title: "N Y Times",
+      title: "New York Times",
       description:
         "A dynamic web app that integrates New York Times APIs to explore books, top stories, and articles with smooth navigation and interactions.",
       stack: "Next.js - Tailwind - NYT API",
@@ -96,8 +104,8 @@ export default function Projects() {
       github: "https://github.com/arslan433/My-App.git",
       demo: "https://arslan-practises.vercel.app/",
     },
-    
-    
+
+
   ];
 
   return (
