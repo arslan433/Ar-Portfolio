@@ -6,7 +6,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
-function ProjectCard({ title, description, stack, github, demo }: any) {
+function ProjectCard({ title, description, stack, github, demo }) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 100 }}
