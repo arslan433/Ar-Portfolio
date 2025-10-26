@@ -13,7 +13,7 @@ function ProjectCard({ title, description, stack, github, demo }) {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
       viewport={{ once: true }}
-      className="border-1  border-gray-600 rounded-md h-full w-3/5 max-sm:w-full mb-10 pb-3 px-4 shadow-lg shadow-gray-600"
+      className="rounded-md h-full w-3/5 max-sm:w-full mb-10 pb-3 px-4 shadow-md ring-1 ring-black/10 dark:ring-white/10"
     >
       <div className="py-4 text-left">
         <h4 className="font-semibold text-xl">{title}</h4>
