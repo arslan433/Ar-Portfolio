@@ -31,7 +31,6 @@ export default function ContactForm() {
 
   return (
     <section className="max-w-4xl mx-auto p-8 grid md:grid-cols-2 gap-8 mt-3 rounded-lg shado">
-      {/* Left Side */}
       <div>
         <h2 className="text-2xl font-bold mb-2">CONTACT ME</h2>
         <p className="text-4xl font-extrabold mb-4">Let's talk!</p>
@@ -55,7 +54,6 @@ export default function ContactForm() {
         </ul>
       </div>
 
-      {/* Right Side */}
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>
           <label className="block mb-1">Name</label>
