@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import Header from "./Header";
 import { DropdownMenuSeparator } from "./ui/dropdown-menu";
 import TechStack from "./TechStack";
+import ContactForm from "./ContactForm";
 export default function Overview() {
     return (
         <>
@@ -143,8 +144,11 @@ export default function Overview() {
                     </div>
                 </motion.div>
             </section>
-            <section id="tech-stack" className=" justify-content-center justify-items-center">
+            <section id="tech-stack" className="justify-content-center justify-items-center">
                 <TechStack/>
+            </section>
+            <section className="mt-10">
+                <ContactForm/>
             </section>
         </>
     )
