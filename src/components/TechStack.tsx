@@ -9,7 +9,7 @@ export default function TechStack() {
   };
 
   return (
-    <section className="p-3 rounded-2xl shadow-lg w-3/5 max-sm:w-[95%]">
+    <section className="p-4 max-w-4xl rounded-2xl">
       <h2 className="text-3xl font-bold mb-6">Tech Stack</h2>
       <div className="">
         {Object.entries(stack).map(([category, items]) => (

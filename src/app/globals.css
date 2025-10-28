@@ -9,7 +9,7 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: white) {
+@media (prefers-color-scheme: dark) {
   :root {
     --background: linear-gradient(130deg, #00193C, #000718);
     /* --background: black; */
@@ -34,7 +34,7 @@ html {
 }
 
 .dark {
-  --background: #0F0F0F;
+  --background: #000000;
   --foreground: white;
 }
 

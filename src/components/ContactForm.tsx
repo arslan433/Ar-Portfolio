@@ -40,7 +40,7 @@ export default function ContactForm() {
   };
 
   return (
-    <section className="max-w-4xl mx-auto p-8 grid md:grid-cols-2 gap-8 mt-4">
+    <section className="max-w-4xl mx-auto p-4 grid md:grid-cols-2 gap-8 mt-4">
       <div>
         <h2 className="text-xs  font-bold mb-4">CONTACT ME</h2>
         <p className="text-4xl font-extrabold mb-2">Let's talk!</p>

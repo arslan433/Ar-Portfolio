@@ -40,7 +40,7 @@ export function DropMenu() {
                     <Button variant="outline"><Menu /></Button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent className="w-30 bg-black/10 backdrop-blur-md mr-3" align="start">
-                    <Link href={'/#overview'}>
+                    <Link href={'/'}>
                         <DropdownMenuItem>Overview</DropdownMenuItem>
                     </Link>
                     <DropdownMenuGroup>

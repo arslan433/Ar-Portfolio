@@ -13,7 +13,7 @@ function ProjectCard({ title, description, stack, github, demo }) {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
       viewport={{ once: true }}
-      className="rounded-md h-full w-3/5 max-sm:w-full mb-10 pb-3 px-4 shadow-md ring-1 ring-black/10 dark:ring-white/10"
+      className="rounded-md h-full max-w-4xl max-sm:w-full mb-10 pb-3 px-4 shadow-md ring-1 ring-black/10 dark:ring-white/50"
     >
       <div className="py-4 text-left">
         <h4 className="font-semibold text-xl">{title}</h4>
@@ -111,10 +111,10 @@ export default function Projects() {
   return (
     <>
       <Header />
-      <div className="flex-1 justify-center text-center pt-15">
+      <div className="flex-1 justify-center text-center pt-30">
         <h3 className="text-3xl font-bold mb-3">Projects</h3>
         <div className="justify-items-center">
-          <p className="w-3/5 text-left max-sm:w-full px-2">
+          <p className="max-w-4xl text-left max-sm:w-full px-2">
             These are most of the projects I've done since I started
             programming, some of them are personal projects, freelance, work,
             practice or for other situation. If you want to see absolutely all
