@@ -8,7 +8,7 @@ export default function Navbar() {
             <Link id="link" href={'/#about'} className="mx-3 font-semibold p-2 dark:hover:bg-white/10 rounded-md transition-colors">About</Link>
             <Link id="link" href={'/projects'} className="mx-3 font-semibold p-2 dark:hover:bg-white/10 rounded-md transition-colors">Projects</Link>
             <Link id="link" href={'#experience'} className="mx-3 font-semibold p-2 dark:hover:bg-white/10 rounded-md transition-colors ">Experience</Link>
-            <Link id="link" href={'#contact'} className="mx-3 font-semibold p-2  dark:hover:bg-white/10 rounded-md transition-colors">Contact</Link>
+            <Link id="link" href={'/#contact'} className="mx-3 font-semibold p-2  dark:hover:bg-white/10 rounded-md transition-colors">Contact</Link>
             <span id="separator" className="border-l-green text-white/10">|</span>
             <ThemeToggle />
         </div>
@@ -49,19 +49,22 @@ export function DropMenu() {
                                 About
                             </DropdownMenuItem>
                         </Link>
+                        <Link href={'/#tech-stack'}>
                         <DropdownMenuItem>
                             Skills
                             {/* <DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut> */}
                         </DropdownMenuItem>
+                        </Link>
                         <Link href={'/projects'}>
                             <DropdownMenuItem>
                                 Projects
                             </DropdownMenuItem>
                         </Link>
+                        <Link href={'/#contact'}>
                         <DropdownMenuItem>
                             Contact
-                            {/* <DropdownMenuShortcut>⌘S</DropdownMenuShortcut> */}
                         </DropdownMenuItem>
+                        </Link>
 
                     </DropdownMenuGroup>
                     <DropdownMenuSeparator />
