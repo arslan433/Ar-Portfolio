@@ -5,7 +5,7 @@ import { Phone, Mail, MapPin } from "lucide-react";
 import { motion } from "framer-motion";
 
 const itemVariants = {
-  hidden: { opacity: 0, x: 50 },
+  hidden: { opacity: 0, z: 50 },
   visible: (i: number) => ({
     opacity: 1,
     x: 0,
