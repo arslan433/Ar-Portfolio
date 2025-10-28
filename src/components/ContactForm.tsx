@@ -9,7 +9,7 @@ const itemVariants = {
   visible: (i: number) => ({
     opacity: 1,
     x: 0,
-    transition: { delay: i * 0.2, type: "spring", stiffness: 60 },
+    transition: { delay: i * 0.2, type: "spring" as const, stiffness: 60 },
   }),
 };
 

@@ -11,9 +11,7 @@ export default function Overview() {
         <>
             <Header />
             <div id="overview" className="flex max-sm:mx-3 justify-center py-5 flex-col items-center">
-                {/* Hero Section */}
                 <section className="grid md:grid-cols-2 items-center gap-8 px-8 py-6 pt-28 rounded-lg">
-                    {/* Left Side - Text */}
                     <div className="space-y-6">
                         <h1 className="text-4xl font-bold">
                             Hi, I am <i>Arslan.M</i>
