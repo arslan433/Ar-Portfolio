@@ -58,3 +58,7 @@ html {
 .light #bgchange {
   background-color: rgba(0, 0, 0, 0.1);
 }
+
+.light #leaf {
+  color : black;
+}

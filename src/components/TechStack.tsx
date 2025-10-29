@@ -3,7 +3,7 @@ export default function TechStack() {
     Frontend: [ "HTML", "CSS", "Javascript","TypeScript", "React.js", "Next.js", "Vue.js", "Zustand", "Redux","Node mailer"],
     Backend: [ "Laravel" ,"PHP", "Firebase",],
     Database: ["MySQL", "SQLite"],
-    UI: ["Tailwind CSS","Bootstrap", "shadcn/ui", "Framer Motion", "Lucide", "High Charts.js"],
+    UI: ["Tailwind CSS","Bootstrap", "shadcn/ui","uiverse.io", "Framer Motion", "Lucide", "High Charts.js"],
     Tools: ["Git", "GitHub", "Bit Buket","File Zila", "PHP storm", "Postman", "Wordpress", "Elementor" ,"Photoshop"],
 
   };
