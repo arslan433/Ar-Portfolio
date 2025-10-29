@@ -55,9 +55,9 @@ export default function Overview() {
                             </Link>
                             <Link href={'/projects'} className="ml-5">
                                 <button
-                                    className="group/button relative inline-flex items-center justify-center overflow-hidden rounded-md bg-gray-400/30 backdrop-blur-lg px-6 py-[10px] max-sm: text-base font-semibold transition-all duration-300 ease-in-out hover:scale-110 hover:shadow-xl hover:shadow-gray-600/50 border border-white/20"
+                                    className="group/button h-12 relative inline-flex items-center justify-center overflow-hidden rounded-md bg-gray-400/30 backdrop-blur-lg px-8 py-[12px] text-base font-semibold transition-all duration-300 ease-in-out hover:scale-110 hover:shadow-xl hover:shadow-gray-600/50 border border-white/20"
                                 >
-                                    <span className="text-lg "> Projects</span>
+                                    <span className="text-sm ">View Projects</span>
                                     <div
                                         className="absolute inset-0 flex h-full w-full justify-center [transform:skew(-13deg)_translateX(-100%)] group-hover/button:duration-1000 group-hover/button:[transform:skew(-13deg)_translateX(100%)]"
                                     >
