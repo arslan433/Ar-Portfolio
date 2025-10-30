@@ -6,6 +6,7 @@ import Header from "./Header";
 import { DropdownMenuSeparator } from "./ui/dropdown-menu";
 import TechStack from "./TechStack";
 import ContactForm from "./ContactForm";
+import CoderCard from './CoderCard';
 import Link from "next/link";
 export default function Overview() {
     return (
@@ -70,19 +71,7 @@ export default function Overview() {
                     </div>
 
                     {/* Right Side - Profile Image with Motion */}
-                    <motion.div
-                        animate={{ y: [0, .01, 0], scale: [1, 1.01, 1] }}
-                        transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-                        className="flex justify-center"
-                    >
-                        <Image
-                            src="/assets/banner.webp"
-                            alt="profile"
-                            width={400}
-                            height={400}
-                            className="rounded-lg shadow-lg"
-                        />
-                    </motion.div>
+                    <CoderCard/>
                 </section>
 
                 {/* Expertise Section */}
