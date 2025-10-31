@@ -8,6 +8,7 @@ import TechStack from "./TechStack";
 import ContactForm from "./ContactForm";
 import CoderCard from './CoderCard';
 import Link from "next/link";
+import Footer from "./Footer";
 export default function Overview() {
     return (
         <>
@@ -167,6 +168,10 @@ export default function Overview() {
             </section>
             <section className="py-8" id="contact">
                 <ContactForm />
+            </section>
+            <section>
+
+                <Footer/>
             </section>
         </>
     )

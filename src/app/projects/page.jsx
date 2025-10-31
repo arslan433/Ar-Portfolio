@@ -5,6 +5,8 @@ import { Eye } from "lucide-react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Footer from "@/components/Footer";
+
 
 function ProjectCard({ title, description, stack, github, demo }) {
   return (
@@ -136,6 +138,9 @@ export default function Projects() {
           ))}
         </div>
       </div>
+      <section>
+        <Footer/>
+      </section>
     </>
   );
 }
