@@ -16,10 +16,10 @@ import clsx from 'clsx';
 const navItems = [
   { label: 'About',    href: '/#about',    icon: User },
   { label: 'Projects', href: '/projects', icon: FolderOpen },
+  { label: 'CV',       href: '#',   external: true, icon: FileText },
   { label: 'GitHub',   href: 'https://github.com/arslan433/',   external: true, icon: Github },
   { label: 'LinkedIn', href: 'https://www.linkedin.com/in/arslan-m-b9426b35a/', external: true, icon: Linkedin },
   { label: 'WhatsApp', href: 'https://wa.me/923474875097',      external: true, icon: MessageCircle },
-  { label: 'CV',       href: '#',   external: true, icon: FileText },
 ];
 
 export default function Footer() {
