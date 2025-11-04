@@ -33,7 +33,7 @@ export default function CoderCard() {
                   .typeString(
                     `<span class="text-purple-400 ml-[-16px]">const</span> <span class="text-blue-400">developer</span> <span class="text-gray-400">=</span> <span class="text-yellow-300">{</span><br>` +
                     `  <span class="text-cyan-400">name</span>: <span class="text-green-400">'Arslan Muhammad'</span>,<br>` +
-                    `  <span class="text-cyan-400">role</span>: <span class="text-green-400">'Full-Stack Developer'</span>,<br>` +
+                    `  <span class="text-cyan-400">role</span>: <span class="text-green-400">'Jr. Full-Stack Developer'</span>,<br>` +
                     `  <span class="text-cyan-400">skills</span>: [<span class="text-green-400">'ReactJS'</span>, <span class="text-green-400">'NextJS'</span>, <span class="text-green-400">'Laravel'</span>, <span class="text-green-400">'PHP'</span>,<br>` +
                     `    <span class="text-green-400">'Tailwind'</span>, <span class="text-green-400">'MySql'</span>, <span class="text-green-400">'MongoDB'</span>, <span class="text-green-400">'Docker'</span>, <span class="text-green-400">'Wordpress'</span>],<br>` +
                     `  <span class="text-cyan-400">hardWorker</span>: <span class="text-orange-400">true</span>,<br>` +

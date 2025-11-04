@@ -160,7 +160,7 @@ export default function Overview() {
                 >
                     <h2 className="text-3xl font-bold mb-3">About me</h2>
                     <div className="">
-                        <p className="text-left">I am a passionate full stack developer who loves building web applications that are simple, fast, and user-friendly. I enjoy learning something new every day and improving my skills to create better solutions. <br/>Working with a team excites me because I believe in growth through communication, trust, and teamwork. I also believe that every problem has a solution, and with focus and consistency, success can always be achieved.</p>
+                        <p className="text-left">I am a passionate full stack developer who loves building web applications that are simple, fast, and user-friendly. I enjoy learning something new every day and improving my skills to create better solutions. <br/> <br/>Working with a team excites me because I believe in growth through communication, trust, and teamwork. I also believe that every problem has a solution, and with focus and consistency, success can always be achieved.</p>
                     </div>
                 </motion.div>
             </section>
