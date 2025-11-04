@@ -21,6 +21,9 @@ export const metadata: Metadata = {
   title: "Arslan - Jr. Full Stack Developer Portfolio",
   description:
     "Jr. Full Stack Developer specializing in Next.js & Laravel. Explore my projects, dashboards, and AI-powered tools.",
+    verification: {
+    google: "055fd303e0bb5b11", 
+  },
   openGraph: {
     type: "website",
     url: "https://arslan-dev.vercel.app",
