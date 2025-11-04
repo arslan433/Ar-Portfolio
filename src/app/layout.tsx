@@ -1,11 +1,9 @@
-"use client";
 
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "next-themes";
 import { SpeedInsights } from "@vercel/speed-insights/next"
-import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
 
 
@@ -19,17 +17,39 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-// export const metadata: Metadata = {
-//   title: "Ar Portfolio",
-//   description: "Directed And Produced BY Ar",
-// };
+export const metadata: Metadata = {
+  title: "Arslan - Jr. Full Stack Developer Portfolio",
+  description:
+    "Jr. Full Stack Developer specializing in Next.js & Laravel. Explore my projects, dashboards, and AI-powered tools.",
+  openGraph: {
+    type: "website",
+    url: "https://arslan-dev.vercel.app",
+    title: "Arslan - Jr. Full Stack Developer Portfolio",
+    description:
+      "Building scalable web apps, analytics dashboards, and AI-powered projects with clean, efficient code.",
+    images: [
+      {
+        url: "https://arslan-dev.vercel.app/og-image.webp", 
+        width: 1200,
+        height: 630,
+        alt: "Arslan Portfolio Preview",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Arslan - Full Stack Developer Portfolio",
+    description:
+      "Next.js & Laravel expert | E-commerce, Dashboards, AI Projects | Explore my work.",
+    images: ["https://arslan-dev.vercel.app/og-image.webp"],
+  },
+};
 
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const pathname = usePathname();
 
 
   return (
@@ -37,14 +57,9 @@ export default function RootLayout({
       <body>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <AnimatePresence mode="wait">
-            <motion.div
-              key={pathname}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-            >
+            <div>
               {children}
-            </motion.div>
+            </div>
           </AnimatePresence>
           <SpeedInsights />
         </ThemeProvider>
