@@ -32,7 +32,7 @@ export const metadata: Metadata = {
       "Building scalable web apps, analytics dashboards, and AI-powered projects with clean, efficient code.",
     images: [
       {
-        url: "https://arslan-dev.vercel.app/og-image.webp", 
+        url: "https://arslan-dev.vercel.app/assets/og-image.webp", 
         width: 1200,
         height: 630,
         alt: "Arslan Portfolio Preview",
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     title: "Arslan - Full Stack Developer Portfolio",
     description:
       "Next.js & Laravel expert | E-commerce, Dashboards, AI Projects | Explore my work.",
-    images: ["https://arslan-dev.vercel.app/og-image.webp"],
+    images: ["https://arslan-dev.vercel.app/assets/og-image.webp"],
   },
 };
 
