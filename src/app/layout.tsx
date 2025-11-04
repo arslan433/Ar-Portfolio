@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   description:
     "Jr. Full Stack Developer specializing in Next.js & Laravel. Explore my projects, dashboards, and AI-powered tools.",
     verification: {
-    google: "-L-Lb66Y16FhRw5TQiXoH7qj3wRN-r5qYyBe2UsMxII", 
+    google: "-L-Lb66Y16FhRw5TQiXoH7qj3wRN-r5qYyBe2UsMxII",
   },
   openGraph: {
     type: "website",
