@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     url: "https://arslan-dev.vercel.app",
     title: "Arslan - Jr. Full Stack Developer Portfolio",
     description:
-      "Building scalable web apps, analytics dashboards, and AI-powered projects with clean, efficient code.",
+      "Building scalable web apps, analytics dashboards, and AI-powered projects with clean and efficient code.",
     images: [
       {
         url: "https://arslan-dev.vercel.app/assets/og-image.webp", 
