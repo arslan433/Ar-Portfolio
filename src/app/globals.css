@@ -51,9 +51,6 @@ html {
   color: rgba(0, 0, 0, 0.1);
 }
 
-.light #imginvert {
-  filter: invert(1) brightness(0);
-}
 
 .light #bgchange {
   background-color: rgba(0, 0, 0, 0.1);
@@ -74,3 +71,6 @@ html {
   50% { opacity: 0; }
 }
 
+.dark #imginvert {
+  filter: invert(1) brightness(2);
+}

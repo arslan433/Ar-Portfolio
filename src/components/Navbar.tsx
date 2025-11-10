@@ -7,7 +7,7 @@ export default function Navbar() {
             <Link href={'/'} id="link" className="mx-3 font-semibold p-2 dark:hover:bg-white/10 rounded-md transition-colors ">Overview</Link>
             <Link id="link" href={'/#about'} className="mx-3 font-semibold p-2 dark:hover:bg-white/10 rounded-md transition-colors">About</Link>
             <Link id="link" href={'/projects'} className="mx-3 font-semibold p-2 dark:hover:bg-white/10 rounded-md transition-colors">Projects</Link>
-            <Link id="link" href={'#experience'} className="mx-3 font-semibold p-2 dark:hover:bg-white/10 rounded-md transition-colors ">Experience</Link>
+            <Link id="link" href={'/#experience'} className="mx-3 font-semibold p-2 dark:hover:bg-white/10 rounded-md transition-colors ">Experience</Link>
             <Link id="link" href={'/#contact'} className="mx-3 font-semibold p-2  dark:hover:bg-white/10 rounded-md transition-colors">Contact</Link>
             <span id="separator" className="border-l-green text-white/10">|</span>
             <ThemeToggle />

@@ -10,6 +10,7 @@ import CoderCard from './CoderCard';
 import Link from "next/link";
 import Footer from "./Footer";
 import Experience from "./Experience";
+import Expertise from "./Expertise";
 export default function Overview() {
     return (
         <>
@@ -73,84 +74,12 @@ export default function Overview() {
                         </div>
                     </div>
 
-                    {/* Right Side - Profile Image with Motion */}
                     <CoderCard/>
                 </section>
-
-                {/* Expertise Section */}
-                <div className="flex flex-col mt-20 items-center">
-                    <div className="max-w-3xl w-full rounded-md backdrop-blur-md text-center">
-                        <DropdownMenuSeparator />
-                        <h3 className="text-xl font-semibold pb-6">Expertise in</h3>
-
-                        <div className="flex flex-wrap justify-center gap-6">
-                            {/* React */}
-                            <div className="p-2 flex flex-col items-center">
-                                <motion.div
-                                    animate={{ rotate: 360 }}
-                                    transition={{ repeat: Infinity, repeatType: "loop", duration: 5, ease: "linear" }}
-                                >
-                                    <Image src="/assets/react.webp" alt="React" width={40} height={40} />
-                                </motion.div>
-                                <h4>React</h4>
-                            </div>
-
-                            {/* Next.js */}
-                            <div className="p-2 flex flex-col items-center" id='imginvert'>
-                                <Image
-                                    src="/assets/next.webp"
-                                    alt="Next.js"
-                                    width={40}
-                                    height={40}
-                                    className="invert brightness-0"
-                                />
-                                <h4>Next.js</h4>
-                            </div>
-
-                            {/* Laravel */}
-                            <div className="p-2 flex flex-col items-center">
-                                <Image src="/assets/laravel.webp" alt="Laravel" width={40} height={40} />
-                                <h4>Laravel</h4>
-                            </div>
-
-                            {/* Firebase */}
-                            <div className="p-2 flex flex-col items-center">
-                                <Image src="/assets/firebase.webp" alt="Firebase" width={40} height={40} />
-                                <h4>Firebase</h4>
-                            </div>
-
-                            {/* SQL */}
-                            <div className="p-2 flex flex-col items-center" id="imginvert">
-                                <Image
-                                    src="/assets/sql.webp"
-                                    alt="SQL"
-                                    width={40}
-                                    height={40}
-                                    className="invert brightness-0"
-                                />
-                                <h4>SQL</h4>
-                            </div>
-
-                            {/* Tailwind */}
-                            <div className="p-2 flex flex-col items-center">
-                                <Image src="/assets/tailwind.webp" alt="Tailwind" width={40} height={40} />
-                                <h4>Tailwind</h4>
-                            </div>
-
-                            {/* Bootstrap */}
-                            <div className="p-2 flex flex-col items-center">
-                                <Image src="/assets/bootstrap.webp" alt="Bootstrap" width={40} height={40} />
-                                <h4>Bootstrap</h4>
-                            </div>
-
-                            {/* WordPress */}
-                            <div className="p-2 flex flex-col items-center">
-                                <Image src="/assets/wordpress.webp" alt="WordPress" width={40} height={40} />
-                                <h4>WordPress</h4>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <section >
+                    <Expertise />
+                </section>
+                
             </div>
             <section id="about" className="justify-content-center justify-items-center pt-15  ">
                 <motion.div className="max-w-4xl max-sm:px-3 px-3"
