@@ -89,7 +89,7 @@ export default function ContactForm() {
         className="space-y-4"
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }} 
+        viewport={{ once: true, amount: 0.3 }}
       >
         <motion.div custom={0} variants={itemVariants}>
           <label className="block mb-1">Name</label>

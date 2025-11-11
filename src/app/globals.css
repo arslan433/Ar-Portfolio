@@ -27,7 +27,6 @@ html {
   scroll-behavior: smooth;
 }
 
-
 :root {
   --background: white;
   --foreground: black;
@@ -73,4 +72,8 @@ html {
 
 .dark #imginvert {
   filter: invert(1) brightness(2);
+}
+
+.light #imginvert {
+  filter: invert(1) brightness(0);
 }

@@ -59,10 +59,18 @@ function ProjectCard({ title, description, stack, github, demo }) {
 export default function Projects() {
   const projects = [
     {
-      title: "Next Mart (working)",
+      title: "Postify (working)",
+      description:
+        "Postify is a simple and modern blogging website where the admin can easily upload and manage blogs. It's built with Laravel and offers a clean, user-friendly design.",
+      stack: "Laravel - SQL",
+      github: "#",
+      demo: "#",
+    },
+    {
+      title: "Next Mart",
       description:
         "Next Mart is a modern e-commerce platform that delivers a fast, responsive, and seamless online shopping experience with a focus on style, performance, and user convenience.",
-      stack: "Next.js - Laravel - SQL",
+      stack: "Next.js - Dummyjson - Zustand",
       github: "https://github.com/arslan433/Next-Mart.git",
       demo: "https://arnextmart.vercel.app/",
     },
@@ -139,7 +147,7 @@ export default function Projects() {
         </div>
       </div>
       <section>
-        <Footer/>
+        <Footer />
       </section>
     </>
   );
