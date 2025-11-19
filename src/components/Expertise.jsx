@@ -26,7 +26,7 @@ export default function Expertise() {
           Expertise In
         </motion.h3>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8 justify-items-center">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-8 gap-8 justify-items-center">
           {skills.map((skill, index) => (
             <motion.div
               key={skill.name}
@@ -48,11 +48,10 @@ export default function Expertise() {
                   height={50}
                   unoptimized
                   id={skill.invert ? "imginvert" : undefined}
-
                 />
                 <div className="absolute inset-0 rounded-full bg-white/5 blur-md opacity-0 group-hover:opacity-100 transition-opacity"></div>
               </motion.div>
-              <h4 className="text-base font-medium  transition-colors">
+              <h4 className="text-base font-medium transition-colors">
                 {skill.name}
               </h4>
             </motion.div>

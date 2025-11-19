@@ -8,7 +8,7 @@ export default function About() {
   return (
     <section
       id="about"
-      className="flex justify-center items-center py-20 px-6 max-w-7xl mx-auto"
+      className="flex justify-center items-center py-20 px-6 max-w-4xl mx-auto"
     >
       <motion.div
         initial={{ opacity: 0, y: 80 }}
