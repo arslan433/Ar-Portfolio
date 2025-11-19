@@ -11,6 +11,7 @@ import Link from "next/link";
 import Footer from "./Footer";
 import Experience from "./Experience";
 import Expertise from "./Expertise";
+import About from "./About";
 export default function Overview() {
     return (
         <>
@@ -22,7 +23,7 @@ export default function Overview() {
                             Arslan.M
                         </h1>
                         <span className="text-4xl font-stretch-semi-expanded font-semibold">From concept to code,
-                            <br/> I bring visions to life.
+                            <br /> I bring visions to life.
                         </span>
                         <p className="text-md leading-relaxed pt-6">
                             I build clean, efficient, and scalable web applications that turn ideas into reality — whether it's creating modern web apps, boosting performance, or solving complex challenges.
@@ -74,25 +75,15 @@ export default function Overview() {
                         </div>
                     </div>
 
-                    <CoderCard/>
+                    <CoderCard />
                 </section>
                 <section >
                     <Expertise />
                 </section>
-                
+
             </div>
-            <section id="about" className="justify-content-center justify-items-center pt-15  ">
-                <motion.div className="max-w-4xl max-sm:px-3 px-3"
-                    initial={{ opacity: 0, y: 100 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: .8 }}
-                    viewport={{ once: true }}
-                >
-                    <h2 className="text-3xl font-bold mb-3">About me</h2>
-                    <div className="">
-                        <p className="text-left">I am a passionate full stack developer who loves building web applications that are simple, fast, and user-friendly. I enjoy learning something new every day and improving my skills to create better solutions. <br/> <br/>Working with a team excites me because I believe in growth through communication, trust, and teamwork. I also believe that every problem has a solution, and with focus and consistency, success can always be achieved.</p>
-                    </div>
-                </motion.div>
+            <section id="about" className="justify-content-center justify-items-center  ">
+                <About />
             </section>
             <section id="tech-stack" className="justify-content-center justify-items-center py-5 pt-10">
                 <TechStack />
@@ -104,7 +95,7 @@ export default function Overview() {
                 <ContactForm />
             </section>
             <section>
-                <Footer/>
+                <Footer />
             </section>
         </>
     )

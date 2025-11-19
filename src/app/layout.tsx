@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   title: "Arslan - Jr. Full Stack Developer Portfolio",
   description:
     "Jr. Full Stack Developer specializing in Next.js & Laravel. Explore my projects, dashboards, and AI-powered tools.",
-    verification: {
+  verification: {
     google: "-L-Lb66Y16FhRw5TQiXoH7qj3wRN-r5qYyBe2UsMxII",
   },
   openGraph: {
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
       "Building scalable web apps, analytics dashboards, and AI-powered projects with clean and efficient code.",
     images: [
       {
-        url: "https://arslan-dev.vercel.app/assets/og-image.webp", 
+        url: "https://arslan-dev.vercel.app/assets/og-image.webp",
         width: 1200,
         height: 630,
         alt: "Arslan Portfolio Preview",
@@ -47,7 +47,6 @@ export const metadata: Metadata = {
     images: ["https://arslan-dev.vercel.app/assets/og-image.webp"],
   },
 };
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -57,6 +56,8 @@ export default function RootLayout({
 
   return (
     <html lang="en">
+      <head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+      </head>
       <body>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <AnimatePresence mode="wait">
