@@ -34,8 +34,8 @@ export default function About() {
 
         {/* Right Side - Text */}
         <div className="flex-1">
-          <span className="text-xs font-bold ">ABOUT ME</span>
-          <h2 className="text-4xl font-extrabold mb-4">
+          <span className="text-xs font-bold">ABOUT ME</span>
+          <h2 className="text-4xl font-extrabold mb-1 mt-4">
             Full Stack Developer
           </h2>
           <p className="text-lg leading-relaxed mb-6">
@@ -58,16 +58,16 @@ export default function About() {
             <motion.a
              title="Github"
               target="_blank"
-              whileHover={{ scale: 1.2, color: "#ef4444" }}
+              whileHover={{ scale: 1.2}}
               href="https://github.com/arslan433/"
-              className=" transition-colors"
+              className="transition-colors"
             >
               <Github size={24} />
             </motion.a>
             <motion.a
              title="Linkedin"
               target="_blank"
-              whileHover={{ scale: 1.2, color: "#ef4444" }}
+              whileHover={{ scale: 1.2}}
               href="https://www.linkedin.com/in/arslan-m-b9426b35a/"
               className="transition-colors"
             >
@@ -76,7 +76,7 @@ export default function About() {
             <motion.a
             title="WhatsApp"
               target="_blank"
-              whileHover={{ scale: 1.2, color: "#ef4444" }}
+              whileHover={{ scale: 1.2}}
               href="https://wa.me/923474875097"
               className="transition-colors"
             >
@@ -85,9 +85,9 @@ export default function About() {
             <motion.a
              title="Stack Overflow"
               target="_blank"
-              whileHover={{ scale: 1.2, color: "#ef4444" }}
+              whileHover={{ scale: 1.2}}
               href="https://stackoverflow.com/users/30619908/arslan-muhammad"
-              className=" transition-colors"
+              className="transition-colors"
             >
               <i id="imginvert" className="fa fa-stack-overflow  text-black"></i>
             </motion.a>
