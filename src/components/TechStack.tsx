@@ -1,8 +1,8 @@
 export default function TechStack() {
   const stack = {
     Frontend: [ "HTML", "CSS", "Javascript","TypeScript", "React.js", "Next.js", "Vue.js", "Zustand", "Redux","Node mailer"],
-    Backend: [ "Laravel" ,"PHP", "Firebase",],
-    Database: ["MySQL", "SQLite"],
+    Backend: [ "Laravel" ,"PHP"],
+    Database: ["MySQL", "SQLite", "Firebase"],
     UI: ["Tailwind CSS","Bootstrap", "shadcn/ui","uiverse.io", "Framer Motion", "Lucide", "High Charts.js"],
     Tools: ["Git", "GitHub", "Bit Buket","File Zila", "PHP storm", "Postman", "Wordpress", "Elementor" ,"Photoshop"],
 
