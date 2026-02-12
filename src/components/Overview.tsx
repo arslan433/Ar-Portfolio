@@ -26,7 +26,7 @@ export default function Overview() {
                             <br /> I bring visions to life.
                         </span>
                         <p className="text-md leading-relaxed pt-6">
-                            I build clean, efficient, and scalable web applications that turn ideas into reality — whether it's creating modern web apps, boosting performance, or solving complex challenges.
+                            I build clean, efficient, and optimized web applications that turn ideas into reality — whether it's creating modern web apps, boosting performance, or solving complex challenges.
                         </p>
 
                         <div className="flex gap-4">

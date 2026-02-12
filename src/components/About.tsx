@@ -22,10 +22,10 @@ export default function About() {
           initial={{ scale: 0.9, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 0.6 }}
-          className="relative w-64 h-64 lg:w-80 lg:h-80 rounded-2xl overflow-hidden shadow-xl"
+          className="relative w-64 h-80 lg:w-80 lg:h-100 min-lg:mb-[80px] rounded-2xl overflow-hidden shadow-xl"
         >
           <Image
-            src="/assets/profile.png"
+            src="/assets/portfolio-profile.webp"
             alt="Profile"
             fill
             className="object-cover rounded-2xl"
@@ -39,8 +39,8 @@ export default function About() {
             Full Stack Developer
           </h2>
           <p className="text-lg leading-relaxed mb-6">
-            I am a Full Stack Developer with 1+ years of experience, building
-            fast, scalable, and user friendly web applications. My focus is on
+            I am a Full Stack Developer with 2+ years of experience, building
+            fast, optimized, and user friendly web applications. My focus is on
             clean architecture, modern frameworks, and delivering solutions that
             truly make an impact.
 
