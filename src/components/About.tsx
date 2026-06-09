@@ -25,7 +25,7 @@ export default function About() {
           className="relative w-64 h-80 lg:w-80 lg:h-100 min-lg:mb-[80px] rounded-2xl overflow-hidden shadow-xl"
         >
           <Image
-            src="/assets/portfolio-profile.webp"
+            src="/assets/new-profile.webp"
             alt="Profile"
             fill
             className="object-cover rounded-2xl"
