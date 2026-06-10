@@ -5,6 +5,7 @@ import "./globals.css";
 import { ThemeProvider } from "next-themes";
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { AnimatePresence, motion } from "framer-motion";
+import Script from 'next/script';
 
 
 const geistSans = Geist({
@@ -58,13 +59,19 @@ export default function RootLayout({
     <html lang="en">
       <head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-FFV976J51W"></script>
-        <script> window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-FFV976J51W');
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-FFV976J51W"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
 
-        </script>
+            gtag('config', 'G-FFV976J51W');
+          `}
+        </Script>
 
       </head>
       <body>
