@@ -22,8 +22,6 @@ export default function TechStack() {
       "Redux",
       "Nodemailer",
     ],
-    Backend: ["Laravel", "PHP"],
-    Database: ["MySQL", "SQLite", "Firebase"],
     UI: [
       "Tailwind CSS",
       "Bootstrap",
@@ -44,6 +42,9 @@ export default function TechStack() {
       "Elementor",
       "Photoshop",
     ],
+    Backend: ["Laravel", "PHP"],
+    Database: ["MySQL", "SQLite", "Firebase"],
+
   };
 
   const icons = {
@@ -55,7 +56,7 @@ export default function TechStack() {
   };
 
   return (
-    <section className="max-w-7xl mx-auto px-4 py-20">
+    <section className="max-w-5xl mx-4 px-4 py-20">
       {/* Heading */}
       <div className="mb-12">
         <h2 className="text-5xl max-sm:text-4xl font-bold tracking-tight">
