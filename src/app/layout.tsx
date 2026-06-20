@@ -6,7 +6,7 @@ import { ThemeProvider } from "next-themes";
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { AnimatePresence, motion } from "framer-motion";
 import Script from 'next/script';
-
+import ChatBot from "@/components/ChatBot"
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -19,9 +19,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Arslan - Jr. Full Stack Developer Portfolio",
+  title: "Arslan - Full Stack Developer Portfolio",
   description:
-    "Jr. Full Stack Developer specializing in Next.js & Laravel. Explore my projects, dashboards, and AI-powered tools.",
+    "Full Stack Developer specializing in Next.js & Laravel. Explore my projects, dashboards, and AI-powered tools.",
   verification: {
     google: "-L-Lb66Y16FhRw5TQiXoH7qj3wRN-r5qYyBe2UsMxII",
   },
@@ -83,6 +83,7 @@ export default function RootLayout({
           </AnimatePresence>
           <SpeedInsights />
         </ThemeProvider>
+        <ChatBot />
       </body>
     </html>
   );

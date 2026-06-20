@@ -8,7 +8,7 @@ export default function Header() {
                         <span className="absolute inline-flex h-full w-full rounded-full bg-green-500 opacity-90 animate-ping"></span>
                         <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
                     </span>
-                    <span className="font-bold text-lg">Open to work</span>
+                    <span className="font-bold text-md">Looking For Opportunities</span>
                 </div>
 
                 <Navbar />

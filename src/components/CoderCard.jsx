@@ -15,7 +15,7 @@ export default function CoderCard() {
           <div className="w-3 h-3 rounded-full bg-[#ff5f56]"></div>
           <div className="w-3 h-3 rounded-full bg-[#ffbd2e]"></div>
           <div className="w-3 h-3 rounded-full bg-[#27c93f]"></div>
-          <span className="ml-3 text-xs text-gray-500 font-medium">dev.jsx</span>
+          <span className="ml-3 text-xs text-gray-200 font-medium">dev.jsx</span>
         </div>
 
         <div className="bg-[#1e1e1e] p-6 px-10 rounded-b-xl font-mono text-sm leading-relaxed">
