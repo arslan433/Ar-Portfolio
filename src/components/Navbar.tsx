@@ -73,11 +73,11 @@ export function DropMenu() {
                         <DropdownMenuShortcut><ExternalLink width={15} height={15} /></DropdownMenuShortcut>
                     </DropdownMenuItem>
                     </Link>
-                    <Link target="_blank" href={'https://www.linkedin.com/in/arslan-m-b9426b35a/'}>
+                    {/* <Link target="_blank" href={'https://www.linkedin.com/in/arslan-m-b9426b35a/'}>
                     <DropdownMenuItem>Linkedin
                         <DropdownMenuShortcut><ExternalLink width={15} height={15} /></DropdownMenuShortcut>
                     </DropdownMenuItem>
-                    </Link>
+                    </Link> */}
                     {/* <DropdownMenuSeparator /> */}
                     <div className="pb-2">
                         <ThemeToggle />

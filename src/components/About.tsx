@@ -64,15 +64,15 @@ export default function About() {
             >
               <Github size={24} />
             </motion.a>
-            <motion.a
+            {/* <motion.a
              title="Linkedin"
               target="_blank"
               whileHover={{ scale: 1.2}}
-              href="https://www.linkedin.com/in/arslan-m-b9426b35a/"
+              href="#"
               className="transition-colors"
             >
               <Linkedin size={24} />
-            </motion.a>
+            </motion.a> */}
             <motion.a
             title="WhatsApp"
               target="_blank"
@@ -94,7 +94,7 @@ export default function About() {
           </div>
 
           {/* Resume Button */}
-          <a target="_blank" href="/cv.pdf">
+          <a target="_blank" href="/Arslan-Web-&-Generative-AI-Developer-Resume.pdf">
 
 
             <motion.button

@@ -10,45 +10,62 @@ import {
 
 export default function TechStack() {
   const stack = {
-    Frontend: [
-      "HTML",
-      "CSS",
-      "JavaScript",
-      "TypeScript",
-      "React.js",
-      "Next.js",
-      "Vue.js",
-      "Zustand",
-      "Redux",
-      "Nodemailer",
-    ],
-    UI: [
-      "Tailwind CSS",
-      "Bootstrap",
-      "shadcn/ui",
-      "uiverse.io",
-      "Framer Motion",
-      "Lucide",
-      "HighCharts.js",
-    ],
-    Tools: [
-      "Git",
-      "GitHub",
-      "Bitbucket",
-      "FileZilla",
-      "PHPStorm",
-      "Postman",
-      "WordPress",
-      "Elementor",
-      "Photoshop",
-    ],
-    Backend: ["Laravel", "PHP"],
-    Database: ["MySQL", "SQLite", "Firebase"],
-
-  };
+  Frontend: [
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "TypeScript",
+    "React.js",
+    "Next.js",
+    "Vue.js",
+    "Zustand",
+    "Redux",
+  ],
+  "Generative AI": [
+    "Python",
+    "LangChain",
+    "RAG Architecture",
+    "LLMs (Ollama)",
+    "Embedding Models",
+    "Streamlit",
+  ],
+  Backend: [
+    "PHP", 
+    "Laravel", 
+    "Python",
+    "Nodemailer",
+  ],
+  Database: [
+    "MySQL", 
+    "SQLite", 
+    "Firebase", 
+    "Vector Databases",
+  ],
+  UI: [
+    "Tailwind CSS",
+    "Bootstrap",
+    "shadcn/ui",
+    "uiverse.io",
+    "Framer Motion",
+    "Lucide",
+    "HighCharts.js",
+  ],
+  Tools: [
+    "Git",
+    "GitHub",
+    "Bitbucket",
+    "FileZilla",
+    "PHPStorm",
+    "Postman",
+    "WordPress",
+    "Elementor",
+    "Photoshop",
+  ],
+};
 
   const icons = {
     Frontend: <Monitor size={22} />,
+    "Generative AI": <Server size={22} />,
     Backend: <Server size={22} />,
     Database: <Database size={22} />,
     UI: <Palette size={22} />,
@@ -65,7 +82,7 @@ export default function TechStack() {
 
         <p className="mt-3 max-w-2xl">
           Technologies, frameworks, tools and platforms I use to build
-          modern, scalable and high-performance web applications.
+          modern and high-performance web applications.
         </p>
       </div>
 

@@ -19,32 +19,44 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Arslan - Full Stack Developer Portfolio",
+  title: "Arslan Muhammad | Web & Generative AI Developer Portfolio",
   description:
-    "Full Stack Developer specializing in Next.js & Laravel. Explore my projects, dashboards, and AI-powered tools.",
+    "Hi, I'm Arslan. I build smart, fast, and scalable web apps. By combining Laravel and Next.js with Generative AI, Python, and LangChain, I create next-level digital experiences. Check out my latest work!",
+  keywords: [
+    "hire web developer",
+    "hire generative AI developer",
+    "hire full stack developer",
+    "freelance generative AI developer",
+    "Laravel backend developer",
+    "Next.js web apps",
+    "custom AI chatbot developer",
+    "Python and LangChain integration",
+    "local LLM and RAG apps",
+    "e-commerce dashboard developer"
+  ],
   verification: {
     google: "-L-Lb66Y16FhRw5TQiXoH7qj3wRN-r5qYyBe2UsMxII",
   },
   openGraph: {
     type: "website",
     url: "https://arslan-dev.vercel.app",
-    title: "Arslan - Jr. Full Stack Developer Portfolio",
+    title: "Arslan Muhammad | Web & Generative AI Developer",
     description:
-      "Building web apps, analytics dashboards, and AI-powered projects with clean and efficient code.",
+      "Looking for a developer who bridges traditional web development with cutting-edge AI? Explore my portfolio featuring e-commerce platforms, custom AI chatbots, and smart data dashboards.",
     images: [
       {
         url: "https://arslan-dev.vercel.app/assets/og-image.webp",
         width: 1200,
         height: 630,
-        alt: "Arslan Portfolio Preview",
+        alt: "Arslan Muhammad - Web and AI Projects Portfolio Preview",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Arslan - Full Stack Developer Portfolio",
+    title: "Arslan Muhammad | Web & Generative AI Developer",
     description:
-      "Next.js & Laravel expert | E-commerce, Dashboards, AI Projects | Explore my work.",
+      "I build smart web applications using Laravel, Next.js, and Python. Explore my real-world projects, from robust e-commerce backends to custom local AI chat models.",
     images: ["https://arslan-dev.vercel.app/assets/og-image.webp"],
   },
 };

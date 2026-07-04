@@ -49,7 +49,7 @@ export default function ProjectsDisplay({ sort = "desc" }) {
                         Featured Projects
                     </h1>
 
-                    <p className="text-zinc-600 dark:text-zinc-400 max-w-3xl mx-auto leading-relaxed">
+                    <p className=" max-w-3xl mx-auto leading-relaxed">
                         A collection of projects built throughout my development
                         journey. These include personal projects, freelance work,
                         practice applications, and professional solutions built
@@ -57,7 +57,7 @@ export default function ProjectsDisplay({ sort = "desc" }) {
                         Firebase, and more.
                     </p>
 
-                    <p className="mt-4 text-zinc-600 dark:text-zinc-400">
+                    <p className="mt-4 text-sm">
                         Want to see more?
                         <Link
                             href="https://github.com/arslan433"
@@ -101,7 +101,7 @@ export default function ProjectsDisplay({ sort = "desc" }) {
                                         </h2>
 
                                         {/* Description */}
-                                        <p className="text-zinc-600 dark:text-zinc-400 leading-relaxed flex-grow">
+                                        <p className="leading-relaxed flex-grow">
                                             {p.description}
                                         </p>
 

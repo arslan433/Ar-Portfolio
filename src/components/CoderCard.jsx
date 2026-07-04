@@ -3,8 +3,6 @@
 import React, { useState } from 'react';
 import Typewriter from 'typewriter-effect';
 
-
-
 export default function CoderCard() {
   const [showResult, setShowResult] = useState(false);
 
@@ -22,7 +20,7 @@ export default function CoderCard() {
           <div className="text-gray-300">
             <Typewriter
               options={{
-                delay: 25,
+                delay: 5,
                 cursor: '▋',
                 autoStart: true,
                 loop: false,
@@ -33,21 +31,20 @@ export default function CoderCard() {
                   .typeString(
                     `<span class="text-purple-400 ml-[-16px]">const</span> <span class="text-blue-400">developer</span> <span class="text-gray-400">=</span> <span class="text-yellow-300">{</span><br>` +
                     `  <span class="text-cyan-400">name</span>: <span class="text-green-400">'Arslan Muhammad'</span>,<br>` +
-                    `  <span class="text-cyan-400">role</span>: <span class="text-green-400">'Jr. Full-Stack Developer'</span>,<br>` +
-                    `  <span class="text-cyan-400">skills</span>: [<span class="text-green-400">'Laravel'</span>, <span class="text-green-400">'NextJS'</span>, <span class="text-green-400">'PHP'</span>,<br>` +
-                    `    <span class="text-green-400">'Tailwind'</span>, <span class="text-green-400">'MySql'</span>,  <span class="text-green-400">'Docker'</span>, <span class="text-green-400">'Wordpress'</span>],<br>` +
+                    `  <span class="text-cyan-400">role</span>: <span class="text-green-400">'Web and Generative AI Developer'</span>,<br>` +
+                    `  <span class="text-cyan-400">skills</span>: [<span class="text-green-400">'Laravel'</span>, <span class="text-green-400">'Next.js'</span>, <span class="text-green-400">'PHP'</span>, <span class="text-green-400">'Python'</span>,<br>` +
+                    `    <span class="text-green-400">'LangChain'</span>, <span class="text-green-400">'Ollama'</span>, <span class="text-green-400">'VectorDB'</span>, <span class="text-green-400">'Tailwind'</span>, <span class="text-green-400">'MySQL'</span>],<br>` +
                     `  <span class="text-cyan-400">hardWorker</span>: <span class="text-orange-400">true</span>,<br>` +
-                    `  <span class="text-cyan-400">quickLearner</span>: <span class="text-orange-400">true</span>,<br>` +
                     `  <span class="text-cyan-400">problemSolver</span>: <span class="text-orange-400">true</span>,<br>` +
+                    `  <span class="text-cyan-400">hasAIEdge</span>: <span class="text-orange-400">true</span>,<br>` +
                     `  <span class="text-cyan-400">hireable</span>: <span class="text-purple-400">function</span>() {<br>` +
-                    `    <span class="text-purple-400 ml-6">return</span> <span class="text-blue-400">( </span><br>` +
-                    `      <span class="text-yellow-300 ml-10">this</span>.<span class="text-red-400">hardWorker</span> <span class="text-gray-400">&amp;&amp;</span><br>` +
-                    `      <span class="text-yellow-300 ml-10">this</span>.<span class="text-red-400">problemSolver</span> <span class="text-gray-400">&amp;&amp;</span><br>` +
-                    `      <span class="text-yellow-300 ml-10">this</span>.<span class="text-red-400">skills</span>.<span class="text-purple-300">length</span> <span class="text-gray-400">=</span> 
-                    <span class="text-orange-400">10+</span><br>` +
-                    `   <span class="ml-6 text-blue-400">)</span>; <br>` +
-                    `  	<span class="ml-3">};</span> <br>` +
-                    `	<span class="text-yellow-300">}</span>;`
+                    `    <span class="text-purple-400 ml-6">return</span> <span class="text-blue-400">(</span><br>` +
+                    `      <span class="text-yellow-300 ml-10">this</span>.<span class="text-red-400">problemSolver</span> <br>` +
+                    `      <span class="text-yellow-300 ml-10">this</span>.<span class="text-red-400">hasAIEdge</span> <span class="text-gray-400"></span><br>` +
+                    `      <span class="text-yellow-300 ml-10">this</span>.<span class="text-red-400">skills</span>.<span class="text-purple-300">length</span> <span class="text-gray-400">=</span> <span class="text-orange-400">10+</span><br>` +
+                    `    <span class="text-blue-400 ml-6">)</span>;<br>` +
+                    `  <span class="text-purple-400 ml-2">}</span><br>` +
+                    `<span class="text-yellow-300">}</span>;`
                   )
                   .callFunction(() => {
                     setTimeout(() => setShowResult(true), 900);

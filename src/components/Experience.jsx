@@ -8,17 +8,17 @@ const experiences = [
         duration: "May 2025 - Present",
         location: "Rawalpindi, Pakistan",
         description:
-            "Develop and maintain full-stack web applications using Laravel and Next.js. Focus on building responsive frontends, secure backends, and integrating APIs for better performance.",
+            "Developing and maintaining full-stack web applications using Laravel and Next.js. Built a centralized multi-store e-commerce admin dashboard, focusing on responsive frontends, localized secure backends, and seamless API integrations.",
         status: true,
     },
     {
-        company: "Self Learning",
-        role: "Full Stack Developer (Learning Phase)",
-        duration: "2023 - 2025",
+        company: "Self-Directed Learning",
+        role: "Full Stack Developer & Exploring Generative AI",
+        duration: "2023 - Present",
         location: "Remote",
         description:
-            "Focused on learning full-stack web development, including React.js, Laravel, and WordPress. Practiced building real-world projects to strengthen frontend and backend skills.",
-        status: false,
+            "Built a strong foundation in full-stack development using Laravel and React.js. Currently expanding my skill set into Generative AI by actively learning and experimenting with Python, LangChain, local LLMs (Ollama), and Vector Databases through hands-on practice projects.",
+        status: true,
     },
 ];
 

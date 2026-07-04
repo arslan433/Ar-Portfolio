@@ -1,5 +1,6 @@
 "use client";
 import { useState, useRef, useEffect } from "react";
+import ReactMarkdown from 'react-markdown';
 
 export default function ChatBot() {
     const [isOpen, setIsOpen] = useState(false);
@@ -70,7 +71,7 @@ export default function ChatBot() {
             )}
 
             {isOpen && (
-                <div className="bg-white dark:bg-zinc-900 w-80 md:w-96 h-[460px] rounded-2xl shadow-2xl border border-gray-200 dark:border-zinc-800 flex flex-col overflow-hidden transition-all duration-300">
+                <div className="bg-white dark:bg-zinc-900 w-100 md:w-96 h-[500px] rounded-2xl shadow-2xl border border-gray-200 dark:border-zinc-800 flex flex-col overflow-hidden transition-all duration-300">
 
                     {/* Header */}
                     <div className="bg-blue-600 text-white p-4 flex justify-between items-center">
@@ -103,7 +104,7 @@ export default function ChatBot() {
                                             : 'bg-white dark:bg-zinc-800 text-gray-800 dark:text-zinc-100 rounded-bl-none border border-gray-100 dark:border-zinc-700'
                                         }`}
                                 >
-                                    {msg.text}
+                                    <ReactMarkdown>{msg.text}</ReactMarkdown>
                                 </div>
                             </div>
                         ))}
