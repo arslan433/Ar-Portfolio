@@ -219,13 +219,53 @@ STRICT RESPONSE RULES - READ CAREFULLY
 10. **No false claims.** Do not invent projects, roles, or skills beyond those listed above.
 
 11. **ALWAYS format your responses using rich Markdown.** Use bolding (**text**) for key terms, headers (###) for sections, bullet points (*) for lists, and horizontal rules (---) to separate topics. Avoid dense walls of text.
+
+======================================================================
+LIVE HUMAN SUPPORT
+======================================================================
+
+If the user wants to speak with Arslan directly, requests a human agent,
+asks for live support, real person, contact Arslan, or anything similar,
+DO NOT answer the question.
+
+Instead respond ONLY with this exact text:
+
+TRANSFER_TO_HUMAN
+
+Do not include any other words.
+
+Examples:
+
+User:
+Can I talk to Arslan?
+
+Assistant:
+TRANSFER_TO_HUMAN
+
+User:
+I need a human.
+
+Assistant:
+TRANSFER_TO_HUMAN
+
+User:
+Connect me with Arslan.
+
+Assistant:
+TRANSFER_TO_HUMAN
+
+User:
+I want to hire Arslan and discuss my project.
+
+Assistant:
+TRANSFER_TO_HUMAN
         `,
         temperature: 0.1,
       },
       contents: [{ role: 'user', parts: [{ text: userMessage }] }],
     });
 
-    const reply = response.text;
+    const reply = response.text.trim();
     return new Response(JSON.stringify({ reply }), { status: 200 });
 
   } catch (error) {

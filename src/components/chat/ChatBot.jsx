@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-
+import { supabase } from "@/lib/supabase";
 import ChatHeader from "./ChatHeader";
 import ChatMessages from "./ChatMessages";
 import ChatInput from "./ChatInput";
@@ -13,6 +13,11 @@ import {
 
 export default function ChatBot() {
   const [isOpen, setIsOpen] = useState(false);
+  const [humanStep, setHumanStep] = useState(null);
+
+  const [visitorName, setVisitorName] = useState("");
+
+  const [visitorEmail, setVisitorEmail] = useState("");
 
   const [messages, setMessages] = useState([
     {
@@ -22,8 +27,9 @@ export default function ChatBot() {
   ]);
 
   const [loading, setLoading] = useState(false);
-
+  const [conversation, setConversation] = useState(null);
   const chatEndRef = useRef(null);
+
 
   // Auto Scroll
   useEffect(() => {
@@ -36,21 +42,17 @@ export default function ChatBot() {
   useEffect(() => {
     async function initChat() {
       try {
-        const conversation =
-          await getOrCreateConversation();
+        const convo = await getOrCreateConversation();
 
-        const history = await loadMessages(
-          conversation.id
-        );
+        setConversation(convo);
+
+        const history = await loadMessages(convo.id);
 
         if (history.length > 0) {
           setMessages(
             history.map((msg) => ({
-              role:
-                msg.sender === "user"
-                  ? "user"
-                  : "model",
-
+              id: msg.id,
+              role: msg.sender === "user" ? "user" : "model",
               text: msg.message,
             }))
           );
@@ -62,6 +64,53 @@ export default function ChatBot() {
 
     initChat();
   }, []);
+
+  useEffect(() => {
+    if (!conversation) return;
+
+    const channel = supabase
+      .channel(`chat-${conversation.id}`)
+      .on(
+        "postgres_changes",
+        {
+          event: "INSERT",
+          schema: "public",
+          table: "messages",
+          filter: `conversation_id=eq.${conversation.id}`,
+        },
+        (payload) => {
+
+
+          const newMessage = payload.new;
+
+          setMessages(prev => {
+
+            if (prev.some((m) => m.id === newMessage.id)) {
+              return prev;
+            }
+
+            return [
+              ...prev,
+              {
+                id: newMessage.id,
+                role:
+                  newMessage.sender === "user"
+                    ? "user"
+                    : "model",
+                text: newMessage.message,
+              },
+            ];
+          });
+
+        }
+      )
+      .subscribe();
+
+    return () => {
+      supabase.removeChannel(channel);
+    };
+
+  }, [conversation]);
 
   return (
     <div className="fixed bottom-6 right-6 z-50">
@@ -80,7 +129,7 @@ export default function ChatBot() {
       {/* Chat Window */}
 
       {isOpen && (
-        <div className="w-[390px] h-[600px] rounded-2xl shadow-2xl border border-gray-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 flex flex-col overflow-hidden">
+        <div className="w-[390px] h-[490px] rounded-2xl shadow-2xl border border-gray-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 flex flex-col overflow-hidden">
 
           <ChatHeader
             onClose={() => setIsOpen(false)}
@@ -93,10 +142,21 @@ export default function ChatBot() {
           />
 
           <ChatInput
+            conversation={conversation}
             messages={messages}
             setMessages={setMessages}
             loading={loading}
             setLoading={setLoading}
+
+            humanStep={humanStep}
+            setHumanStep={setHumanStep}
+
+            visitorName={visitorName}
+            setVisitorName={setVisitorName}
+
+            visitorEmail={visitorEmail}
+            setVisitorEmail={setVisitorEmail}
+
           />
 
         </div>

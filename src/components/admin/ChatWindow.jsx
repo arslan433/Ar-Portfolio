@@ -4,16 +4,19 @@ import { useEffect, useRef, useState } from "react";
 import { supabase } from "@/lib/supabase";
 import MessageBubble from "./MessageBubble";
 import ReplyBox from "./ReplyBox";
-
-export default function ChatWindow({ conversation }) {
+import { updateConversation } from "@/lib/chat";
+export default function ChatWindow({ conversation, setConversation }) {
   const [messages, setMessages] = useState([]);
   const messagesEndRef = useRef(null);
 
   useEffect(() => {
-    if (conversation) {
-      fetchMessages();
-    }
-  }, [conversation]);
+  if (!conversation) {
+    setMessages([]);
+    return;
+  }
+
+  fetchMessages();
+}, [conversation]);
 
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({
@@ -36,7 +39,44 @@ export default function ChatWindow({ conversation }) {
     }
 
     setMessages(data);
+
+      await updateConversation(conversation.id, {
+  unread_count: 0,
+});
+
   }
+
+
+  async function takeOver() {
+  await updateConversation(conversation.id, {
+    status: "human",
+  });
+}
+
+useEffect(() => {
+  if (!conversation) return;
+
+  const channel = supabase
+    .channel(`conversation-status-${conversation.id}`)
+    .on(
+      "postgres_changes",
+      {
+        event: "UPDATE",
+        schema: "public",
+        table: "conversations",
+        filter: `id=eq.${conversation.id}`,
+      },
+      (payload) => {
+        setConversation(payload.new);
+      }
+    )
+    .subscribe();
+
+  return () => {
+    supabase.removeChannel(channel);
+  };
+}, [conversation]);
+
 
   if (!conversation) {
     return (
@@ -51,17 +91,35 @@ export default function ChatWindow({ conversation }) {
 
       {/* Header */}
 
-      <div className="border-b p-4 dark:border-zinc-800">
+      <div className="border-b p-4 dark:border-zinc-800 flex justify-between items-center">
 
-        <h2 className="font-bold">
-          {conversation.visitor_name || "Anonymous Visitor"}
-        </h2>
+  <div>
+    <h2 className="font-bold">
+      {conversation.visitor_name || "Anonymous Visitor"}
+    </h2>
 
-        <p className="text-sm text-gray-500">
-          {conversation.visitor_email || "No Email"}
-        </p>
+    <p className="text-sm text-gray-500">
+      {conversation.visitor_email || "No Email"}
+    </p>
 
-      </div>
+    <p className="text-xs mt-1">
+      Status:
+      <span className="font-semibold ml-1">
+        {conversation.status}
+      </span>
+    </p>
+  </div>
+
+  {conversation.status === "waiting" && (
+    <button
+      onClick={takeOver}
+      className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm"
+    >
+      Take Over
+    </button>
+  )}
+
+</div>
 
       {/* Messages */}
 

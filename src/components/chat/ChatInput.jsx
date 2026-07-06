@@ -2,8 +2,8 @@
 
 import { useState } from "react";
 import {
-  getOrCreateConversation,
   saveMessage,
+  updateConversation,
 } from "@/lib/chat";
 
 export default function ChatInput({
@@ -11,43 +11,131 @@ export default function ChatInput({
   setMessages,
   loading,
   setLoading,
+
+  conversation,
+
+  humanStep,
+  setHumanStep,
+
+  visitorName,
+  setVisitorName,
+
+  visitorEmail,
+  setVisitorEmail,
 }) {
   const [input, setInput] = useState("");
 
   async function sendMessage(e) {
     e.preventDefault();
 
-    if (!input.trim() || loading) return;
-
     const userText = input.trim();
 
-    setInput("");
+    if (!userText || loading || !conversation) return;
 
-    setLoading(true);
+    // =========================
+    // Collect Name
+    // =========================
 
-    // Add user message to UI
-    const updatedMessages = [
-      ...messages,
-      {
-        role: "user",
-        text: userText,
-      },
-    ];
+    if (humanStep === "name") {
 
-    setMessages(updatedMessages);
+      setVisitorName(userText);
 
-    try {
-      // Get/Create Conversation
-      const conversation = await getOrCreateConversation();
+      setMessages((prev) => [
+        ...prev,
+        {
+          role: "user",
+          text: userText,
+        },
+        {
+          role: "model",
+          text: "Great 😊 Now please enter your email address.",
+        },
+      ]);
 
-      // Save User Message
+      setInput("");
+
+      setHumanStep("email");
+
+      return;
+    }
+
+    // =========================
+    // Collect Email
+    // =========================
+
+    if (humanStep === "email") {
+
+      await updateConversation(conversation.id, {
+        visitor_name: visitorName,
+        visitor_email: userText,
+        status: "waiting",
+      });
+
+      setVisitorEmail(userText);
+
+      setMessages((prev) => [
+        ...prev,
+        {
+          role: "user",
+          text: userText,
+        },
+        {
+          role: "model",
+          text:
+            "✅ Thank you! Arslan has been notified. Please wait while he joins the conversation.",
+        },
+      ]);
+
+      setInput("");
+
+      setHumanStep("waiting");
+
+      return;
+    }
+
+    // =========================
+    // Human Chat Mode
+    // =========================
+
+    if (conversation.status === "human") {
+
       await saveMessage(
         conversation.id,
         "user",
         userText
       );
 
-      // Gemini API
+      setInput("");
+
+      return;
+    }
+
+    setLoading(true);
+    setInput("");
+
+    try {
+
+      // Save user message
+
+      const savedUser = await saveMessage(
+        conversation.id,
+        "user",
+        userText
+      );
+
+      const updatedMessages = [
+        ...messages,
+        {
+          id: savedUser.id,
+          role: "user",
+          text: userText,
+        },
+      ];
+
+      setMessages(updatedMessages);
+
+      // Gemini
+
       const res = await fetch("/api/chat", {
         method: "POST",
         headers: {
@@ -58,86 +146,111 @@ export default function ChatInput({
         }),
       });
 
-      // Temporary Bot Reply
-
-      const botReplytest = {
-        role: "model",
-        text: "Testing... Message saved successfully in Supabase 🚀",
-      };
-
-      setMessages([
-        ...updatedMessages,
-        botReply,
-      ]);
-
-      await saveMessage(
-        conversation.id,
-        "bot",
-        botReply.text
-      );
-
       const data = await res.json();
 
       if (!res.ok) {
-        throw new Error(data.error || "Something went wrong");
+        throw new Error(
+          data.error || "Gemini API Error"
+        );
       }
 
-      const botReply = {
-        role: "model",
-        text: data.reply,
-      };
+      // =========================
+      // Transfer To Human
+      // =========================
 
-      // Add Bot Reply
-      setMessages([
-        ...updatedMessages,
-        botReply,
-      ]);
+      if (data.reply === "TRANSFER_TO_HUMAN") {
 
-      // Save Bot Reply
-      await saveMessage(
+        setMessages([
+          ...updatedMessages,
+          {
+            role: "model",
+            text:
+              "Sure 😊 Before I connect you with Arslan, may I know your name?",
+          },
+        ]);
+
+        setHumanStep("name");
+
+        return;
+      }
+
+      // =========================
+      // Bot Reply
+      // =========================
+
+      const savedBot = await saveMessage(
         conversation.id,
         "bot",
         data.reply
       );
 
-    } catch (error) {
-      console.error(error);
-
       setMessages([
         ...updatedMessages,
         {
+          id: savedBot.id,
           role: "model",
-          text: "Sorry, something went wrong.",
+          text: data.reply,
         },
       ]);
+
+    } catch (err) {
+
+      console.error(err);
+
+      setMessages((prev) => [
+        ...prev,
+        {
+          role: "model",
+          text:
+            "⚠️ Sorry, something went wrong. Please try again.",
+        },
+      ]);
+
     } finally {
+
       setLoading(false);
+
     }
   }
 
   return (
-    <form
-      onSubmit={sendMessage}
-      className="p-3 bg-white dark:bg-zinc-900 border-t border-gray-200 dark:border-zinc-800 flex gap-2"
-    >
-      <input
-        value={input}
-        onChange={(e) => setInput(e.target.value)}
-        placeholder="Ask me anything..."
-        className="flex-1 rounded-xl border px-3 py-2 text-sm
-        bg-gray-50 dark:bg-zinc-800
-        dark:border-zinc-700
-        focus:outline-none
-        focus:border-blue-500"
-      />
+    <div>
 
-      <button
-        type="submit"
-        disabled={loading}
-        className="bg-blue-600 text-white px-5 rounded-xl hover:bg-blue-700 disabled:opacity-60"
+      {conversation?.status === "human" && (
+
+        <div className="bg-green-100 text-green-700 text-center text-sm p-2 border-b">
+
+          🟢 You are now chatting with Arslan.
+
+        </div>
+
+      )}
+
+      <form
+        onSubmit={sendMessage}
+        className="p-3 flex gap-2 bg-white dark:bg-zinc-900 border-t dark:border-zinc-800"
       >
-        Send
-      </button>
-    </form>
+
+        <input
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
+          placeholder="Ask me anything..."
+          className="flex-1 rounded-xl border px-3 py-2 text-sm
+          bg-gray-50 dark:bg-zinc-800
+          dark:border-zinc-700
+          focus:outline-none
+          focus:border-blue-500"
+        />
+
+        <button
+          disabled={loading}
+          className="bg-blue-600 hover:bg-blue-700 text-white px-5 rounded-xl disabled:opacity-60"
+        >
+          Send
+        </button>
+
+      </form>
+
+    </div>
   );
 }
