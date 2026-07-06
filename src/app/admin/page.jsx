@@ -44,3 +44,42 @@ export default function AdminPanel() {
     </div>
   );
 }
+
+
+// "use client";
+
+// import { useState } from "react";
+
+// import ConversationList from "@/components/admin/ConversationList";
+// import ChatWindow from "@/components/admin/ChatWindow";
+
+// export default function AdminPage() {
+//   const [activeConversation, setActiveConversation] = useState(null);
+
+//   return (
+//     <div className="h-screen flex">
+
+//       {/* Left Sidebar */}
+
+//       <div className="w-80 border-r dark:border-zinc-800">
+
+//         <ConversationList
+//           activeConversation={activeConversation}
+//           setActiveConversation={setActiveConversation}
+//         />
+
+//       </div>
+
+//       {/* Right Side */}
+
+//       <div className="flex-1">
+
+//         <ChatWindow
+//           conversation={activeConversation}
+//         />
+
+//       </div>
+
+//     </div>
+//   );
+// }

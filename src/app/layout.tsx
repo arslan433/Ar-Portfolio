@@ -6,7 +6,7 @@ import { ThemeProvider } from "next-themes";
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { AnimatePresence, motion } from "framer-motion";
 import Script from 'next/script';
-import ChatBot from "@/components/ChatBot"
+import ChatBot from "@/components/chat/ChatBot";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
