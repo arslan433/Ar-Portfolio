@@ -31,13 +31,13 @@ export default function ReplyBox({
 
       // Update conversation
       await supabase
-        .from("conversations")
-        .update({
-          last_message: message.trim(),
-          updated_at: new Date().toISOString(),
-          status: "live",
-        })
-        .eq("id", conversation.id);
+  .from("conversations")
+  .update({
+    last_message: message.trim(),
+    updated_at: new Date().toISOString(),
+    status: "human",
+  })
+  .eq("id", conversation.id);
 
       setMessage("");
 

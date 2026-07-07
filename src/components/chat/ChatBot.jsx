@@ -112,6 +112,35 @@ export default function ChatBot() {
 
   }, [conversation]);
 
+useEffect(() => {
+  if (!conversation?.id) return;
+
+  console.log("SUBSCRIBE");
+
+  const statusChannel = supabase
+    .channel(`conversation-${conversation.id}`)
+    .on(
+      "postgres_changes",
+      {
+        event: "UPDATE",
+        schema: "public",
+        table: "conversations",
+        filter: `id=eq.${conversation.id}`,
+      },
+      (payload) => {
+        console.log("UPDATE EVENT");
+        setConversation(payload.new);
+      }
+    )
+    .subscribe();
+
+  return () => {
+    console.log("UNSUBSCRIBE");
+    supabase.removeChannel(statusChannel);
+  };
+}, [conversation?.id]);
+
+
   return (
     <div className="fixed bottom-6 right-6 z-50">
 

@@ -96,6 +96,8 @@ export default function ChatInput({
     // =========================
     // Human Chat Mode
     // =========================
+    console.log("Conversation Status:", conversation.status);
+
 
     if (conversation.status === "human") {
 
@@ -160,8 +162,31 @@ export default function ChatInput({
 
       if (data.reply === "TRANSFER_TO_HUMAN") {
 
-        setMessages([
-          ...updatedMessages,
+        // User already registered
+        if (
+          conversation.visitor_name &&
+          conversation.visitor_email
+        ) {
+
+          await updateConversation(conversation.id, {
+            status: "waiting",
+          });
+
+          setMessages((prev) => [
+            ...prev,
+            {
+              role: "model",
+              text:
+                "✅ Arslan has been notified. Please wait while he joins the conversation.",
+            },
+          ]);
+
+          return;
+        }
+
+        // First time visitor
+        setMessages((prev) => [
+          ...prev,
           {
             role: "model",
             text:

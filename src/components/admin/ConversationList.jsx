@@ -13,6 +13,68 @@ export default function ConversationList({
 
   useEffect(() => {
     fetchConversations();
+
+    const channel = supabase
+      .channel("conversation-list")
+
+      // New Conversation
+      .on(
+        "postgres_changes",
+        {
+          event: "INSERT",
+          schema: "public",
+          table: "conversations",
+        },
+        (payload) => {
+          setConversations((prev) => [
+            payload.new,
+            ...prev,
+          ]);
+        }
+      )
+
+      // Conversation Updated
+      .on(
+        "postgres_changes",
+        {
+          event: "UPDATE",
+          schema: "public",
+          table: "conversations",
+        },
+        (payload) => {
+
+          setConversations((prev) => {
+
+            const updated = prev.map((c) =>
+              c.id === payload.new.id ? payload.new : c
+            );
+
+            // Latest updated conversation top par
+            updated.sort(
+              (a, b) =>
+                new Date(b.updated_at) -
+                new Date(a.updated_at)
+            );
+
+            return updated;
+
+          });
+
+          // Agar ye selected conversation hai
+          if (
+            activeConversation?.id === payload.new.id
+          ) {
+            setActiveConversation(payload.new);
+          }
+
+        }
+      )
+
+      .subscribe();
+
+    return () => {
+      supabase.removeChannel(channel);
+    };
   }, []);
 
   async function fetchConversations() {
@@ -21,17 +83,20 @@ export default function ConversationList({
     const { data, error } = await supabase
       .from("conversations")
       .select("*")
-      .order("updated_at", { ascending: false });
+      .order("updated_at", {
+        ascending: false,
+      });
 
     if (error) {
       console.error(error);
     } else {
+
       setConversations(data);
 
-      // Automatically select first conversation
       if (data.length > 0 && !activeConversation) {
         setActiveConversation(data[0]);
       }
+
     }
 
     setLoading(false);
