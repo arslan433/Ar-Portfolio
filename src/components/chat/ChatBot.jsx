@@ -159,9 +159,9 @@ export default function ChatBot() {
   }, [conversation?.id]);
 
 
-  useEffect(() => {
-    chatEndRef.current?.scrollIntoView({ behavior: "smooth" });
-  }, [messages, loading]);
+  // useEffect(() => {
+  //   chatEndRef.current?.scrollIntoView();
+  // }, [messages, loading]);
 
   return (
     <div className="fixed bottom-6 right-6 z-50">
