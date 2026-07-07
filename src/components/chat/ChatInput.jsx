@@ -4,6 +4,7 @@ import { useState } from "react";
 import {
   saveMessage,
   updateConversation,
+  getOrCreateConversation,
 } from "@/lib/chat";
 
 export default function ChatInput({
@@ -13,6 +14,7 @@ export default function ChatInput({
   setLoading,
 
   conversation,
+  setConversation,
 
   humanStep,
   setHumanStep,
@@ -25,13 +27,19 @@ export default function ChatInput({
 }) {
   const [input, setInput] = useState("");
 
+
   async function sendMessage(e) {
     e.preventDefault();
+    let currentConversation = conversation;
+
+    if (!currentConversation) {
+      currentConversation = await getOrCreateConversation();
+      setConversation(currentConversation);
+    }
 
     const userText = input.trim();
 
-    if (!userText || loading || !conversation) return;
-
+    if (!userText || loading) return;
     // =========================
     // Collect Name
     // =========================
@@ -65,7 +73,7 @@ export default function ChatInput({
 
     if (humanStep === "email") {
 
-      await updateConversation(conversation.id, {
+      await updateConversation(currentConversation.id, {
         visitor_name: visitorName,
         visitor_email: userText,
         status: "waiting",
@@ -96,13 +104,13 @@ export default function ChatInput({
     // =========================
     // Human Chat Mode
     // =========================
-    console.log("Conversation Status:", conversation.status);
+    console.log("Conversation Status:", currentConversation.status);
 
 
-    if (conversation.status === "human") {
+    if (currentConversation.status === "human") {
 
       await saveMessage(
-        conversation.id,
+        currentConversation.id,
         "user",
         userText
       );
@@ -120,7 +128,7 @@ export default function ChatInput({
       // Save user message
 
       const savedUser = await saveMessage(
-        conversation.id,
+        currentConversation.id,
         "user",
         userText
       );
@@ -164,11 +172,11 @@ export default function ChatInput({
 
         // User already registered
         if (
-          conversation.visitor_name &&
-          conversation.visitor_email
+          currentConversation.visitor_name &&
+          currentConversation.visitor_email
         ) {
 
-          await updateConversation(conversation.id, {
+          await updateConversation(currentConversation.id, {
             status: "waiting",
           });
 
@@ -204,7 +212,7 @@ export default function ChatInput({
       // =========================
 
       const savedBot = await saveMessage(
-        conversation.id,
+        currentConversation.id,
         "bot",
         data.reply
       );
@@ -236,8 +244,8 @@ export default function ChatInput({
       setLoading(false);
 
     }
-  }
 
+  }
   return (
     <div>
 

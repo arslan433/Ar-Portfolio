@@ -5,6 +5,8 @@ import { supabase } from "@/lib/supabase";
 import ChatHeader from "./ChatHeader";
 import ChatMessages from "./ChatMessages";
 import ChatInput from "./ChatInput";
+import { usePathname } from "next/navigation";
+
 
 import {
   getOrCreateConversation,
@@ -12,6 +14,13 @@ import {
 } from "@/lib/chat";
 
 export default function ChatBot() {
+  const pathname = usePathname();
+
+  // Admin pages chatbot hide
+  if (pathname.startsWith("/admin")) {
+    return null;
+  }
+
   const [isOpen, setIsOpen] = useState(false);
   const [humanStep, setHumanStep] = useState(null);
 
@@ -42,9 +51,7 @@ export default function ChatBot() {
   useEffect(() => {
     async function initChat() {
       try {
-        const convo = await getOrCreateConversation();
 
-        setConversation(convo);
 
         const history = await loadMessages(convo.id);
 
@@ -112,33 +119,33 @@ export default function ChatBot() {
 
   }, [conversation]);
 
-useEffect(() => {
-  if (!conversation?.id) return;
+  useEffect(() => {
+    if (!conversation?.id) return;
 
-  console.log("SUBSCRIBE");
+    console.log("SUBSCRIBE");
 
-  const statusChannel = supabase
-    .channel(`conversation-${conversation.id}`)
-    .on(
-      "postgres_changes",
-      {
-        event: "UPDATE",
-        schema: "public",
-        table: "conversations",
-        filter: `id=eq.${conversation.id}`,
-      },
-      (payload) => {
-        console.log("UPDATE EVENT");
-        setConversation(payload.new);
-      }
-    )
-    .subscribe();
+    const statusChannel = supabase
+      .channel(`conversation-${conversation.id}`)
+      .on(
+        "postgres_changes",
+        {
+          event: "UPDATE",
+          schema: "public",
+          table: "conversations",
+          filter: `id=eq.${conversation.id}`,
+        },
+        (payload) => {
+          console.log("UPDATE EVENT");
+          setConversation(payload.new);
+        }
+      )
+      .subscribe();
 
-  return () => {
-    console.log("UNSUBSCRIBE");
-    supabase.removeChannel(statusChannel);
-  };
-}, [conversation?.id]);
+    return () => {
+      console.log("UNSUBSCRIBE");
+      supabase.removeChannel(statusChannel);
+    };
+  }, [conversation?.id]);
 
 
   return (
@@ -172,6 +179,8 @@ useEffect(() => {
 
           <ChatInput
             conversation={conversation}
+            setConversation={setConversation}
+
             messages={messages}
             setMessages={setMessages}
             loading={loading}
@@ -185,6 +194,8 @@ useEffect(() => {
 
             visitorEmail={visitorEmail}
             setVisitorEmail={setVisitorEmail}
+
+
 
           />
 
