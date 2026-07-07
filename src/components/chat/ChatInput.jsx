@@ -269,7 +269,7 @@ export default function ChatInput({
           onChange={(e) => setInput(e.target.value)}
           placeholder="Ask me anything..."
           className="flex-1 rounded-xl border px-3 py-2 text-sm
-          bg-gray-50 dark:bg-zinc-800
+          bg-gray-50 text-gray-50 dark:bg-zinc-800
           dark:border-zinc-700
           focus:outline-none
           focus:border-blue-500"

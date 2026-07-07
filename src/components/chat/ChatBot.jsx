@@ -6,55 +6,66 @@ import ChatHeader from "./ChatHeader";
 import ChatMessages from "./ChatMessages";
 import ChatInput from "./ChatInput";
 import { usePathname } from "next/navigation";
-
-
-import {
-  getOrCreateConversation,
-  loadMessages,
-} from "@/lib/chat";
+import { getOrCreateConversation, loadMessages } from "@/lib/chat";
 
 export default function ChatBot() {
   const pathname = usePathname();
-
-  // Admin pages chatbot hide
-  if (pathname.startsWith("/admin")) {
-    return null;
-  }
+  if (pathname.startsWith("/admin")) return null;
 
   const [isOpen, setIsOpen] = useState(false);
-  const [humanStep, setHumanStep] = useState(null);
-
-  const [visitorName, setVisitorName] = useState("");
-
-  const [visitorEmail, setVisitorEmail] = useState("");
-
+  const [conversation, setConversation] = useState(null);
   const [messages, setMessages] = useState([
     {
       role: "model",
       text: "Hello! 👋 I am Arslan's AI Assistant. Feel free to ask me anything about his skills, projects or experience.",
     },
   ]);
-
   const [loading, setLoading] = useState(false);
-  const [conversation, setConversation] = useState(null);
+  const [humanStep, setHumanStep] = useState(null);
+  const [visitorName, setVisitorName] = useState("");
+  const [visitorEmail, setVisitorEmail] = useState("");
   const chatEndRef = useRef(null);
 
-
-  // Auto Scroll
+  // 1. On mount, check for a saved conversation ID
   useEffect(() => {
-    chatEndRef.current?.scrollIntoView({
-      behavior: "smooth",
-    });
-  }, [messages, loading]);
+    const savedId = localStorage.getItem("chat_conversation_id");
+    if (!savedId) return; // no previous chat – ChatInput will create one later
 
-  // Load Chat History
+    // fetch the existing conversation from Supabase (optional, you can also just set { id: savedId })
+    const fetchConversation = async () => {
+      const { data, error } = await supabase
+        .from("conversations")
+        .select("*")
+        .eq("id", savedId)
+        .single();
+
+      if (error) {
+        console.error("Failed to fetch conversation:", error);
+        localStorage.removeItem("chat_conversation_id");
+        return;
+      }
+      setConversation(data);
+    };
+
+    fetchConversation();
+  }, []);
+
+  // 2. Whenever the conversation changes (new or updated), store its ID
   useEffect(() => {
+    if (conversation?.id) {
+      localStorage.setItem("chat_conversation_id", conversation.id);
+    } else {
+      localStorage.removeItem("chat_conversation_id");
+    }
+  }, [conversation?.id]);
+
+  // 3. Load messages once we have a valid conversation
+  useEffect(() => {
+    if (!conversation?.id) return;
+
     async function initChat() {
       try {
-
-
-        const history = await loadMessages(convo.id);
-
+        const history = await loadMessages(conversation.id);
         if (history.length > 0) {
           setMessages(
             history.map((msg) => ({
@@ -65,12 +76,12 @@ export default function ChatBot() {
           );
         }
       } catch (err) {
-        console.error(err);
+        console.error("Failed to load messages:", err);
       }
     }
 
     initChat();
-  }, []);
+  }, [conversation?.id]); // re‑run when conversation.id becomes available
 
   useEffect(() => {
     if (!conversation) return;
@@ -148,6 +159,10 @@ export default function ChatBot() {
   }, [conversation?.id]);
 
 
+  useEffect(() => {
+    chatEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  }, [messages, loading]);
+
   return (
     <div className="fixed bottom-6 right-6 z-50">
 
@@ -165,7 +180,7 @@ export default function ChatBot() {
       {/* Chat Window */}
 
       {isOpen && (
-        <div className="w-[390px] h-[490px] rounded-2xl shadow-2xl border border-gray-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 flex flex-col overflow-hidden">
+        <div className="w-[390px] h-[490px] max-md:w-[350px] rounded-2xl shadow-2xl border border-gray-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 flex flex-col overflow-hidden">
 
           <ChatHeader
             onClose={() => setIsOpen(false)}
